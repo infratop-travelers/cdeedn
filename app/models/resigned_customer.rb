@@ -1,0 +1,2 @@
+class ResignedCustomer < ApplicationRecord
+end

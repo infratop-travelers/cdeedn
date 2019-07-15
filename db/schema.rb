@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_15_105530) do
+ActiveRecord::Schema.define(version: 2019_07_15_105637) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "post_code", null: false
@@ -104,6 +104,12 @@ ActiveRecord::Schema.define(version: 2019_07_15_105530) do
     t.integer "postage", null: false
     t.string "address", null: false
     t.string "payment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resigned_customers", force: :cascade do |t|
+    t.integer "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
