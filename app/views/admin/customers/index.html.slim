@@ -1,0 +1,9 @@
+h1 ユーザー一覧画面
+a href="#" link to items
+br
+br
+
+- @customers.each do |customer|
+    = customer.last_name
+    = customer.first_name
+    = link_to "詳細へ", customer_path(customer.id)

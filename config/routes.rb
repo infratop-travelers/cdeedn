@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'customers#top'
   devise_for :admins
   devise_for :customers
+
   resources :customers do
     resources :curt_items, only: [:index, :destroy]
     get 'cart_items/confirm'
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :items
+    resources :home, only: [:index]
+    resources :customers, only: [:index]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
