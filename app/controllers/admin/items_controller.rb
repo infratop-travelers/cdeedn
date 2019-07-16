@@ -1,5 +1,8 @@
 class Admin::ItemsController < ApplicationController
-
+  def index
+    @items = Item.all
+  end
+  
   def new
     @item = Item.new(item_params)
   end
@@ -40,4 +43,5 @@ class Admin::ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:image, :singer, :label, :genre, :name, :price, :stock, :delivery_status)
+  end
 end
