@@ -6,4 +6,5 @@ br
 - @customers.each do |customer|
     = customer.last_name
     = customer.first_name
-    = link_to "詳細へ", customer_path(customer.id)
+    = link_to "詳細へ", admin_customer_path(customer.id)
+    br
