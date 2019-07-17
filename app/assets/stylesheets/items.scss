@@ -1,3 +1,39 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index.html.slim
+$main-color: #c0c0c0;
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.announce{
+	width: 200px;
+	height: 70px;
+	border-radius: 5px;
+	border: solid 1px $main-color;
+	margin : 30px auto;
+	position: relative;
+	padding: 10px 0;
+	p.announce-text{
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%);
+	}
+}
+
+.item-container{
+	width: 90%;
+	height: 90px;
+	display: flex;
+	border: solid 1px $main-color;
+}
+
+
+.image{
+	border-radius: 5%;
+}
