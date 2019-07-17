@@ -13,4 +13,10 @@ class Customer < ApplicationRecord
   validates :prefecture, presence: true
   validates :city, presence: true
   validates :street, presence: true
+
+  has_many :addresses
+  has_many :favorites
+  has_many :orders
+  has_many :cart_items
+  has_one :resigned_customer
 end
