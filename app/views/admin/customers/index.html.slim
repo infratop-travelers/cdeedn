@@ -4,8 +4,9 @@ br
 br
 
 - @customers.each do |customer|
+  - if customer.resigned == false
     = customer.last_name
     = customer.first_name
     = link_to "詳細へ", admin_customer_path(customer.id)    
-    = link_to "退会させる", 
+    = link_to "退会させる", admin_resigned_customer_path(customer.id, params: { customer: { resigned: true } }, resigned_customer: { id: customer.id } ), method: :put
     br
