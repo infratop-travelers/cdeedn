@@ -1,2 +1,26 @@
 h1 Items#show
-p Find me in app/views/items/show.html.slim
+div.btn-container
+ =link_to "←　一覧ページに戻る", items_path, class: "btn btn-info"
+ / カートに入れるボタン挿入
+div.item-container.flex
+  / 画面左側
+  div.side-bar
+    div.image-box
+      =@item.image
+    div.favorites-box
+      / いいねのハート
+      / =@item.favorites.count
+  / 画面右側
+  div.main-info
+    div.item-info.flex
+      =@item.name
+      / =@item.singer.name
+      / =@item.label.name
+    div.songs
+      div.wrapper
+        / - @item.songs.each do |song|
+         div.song-bar
+          / =@item.song.name
+          / =@item.disc
+
+
