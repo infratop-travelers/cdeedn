@@ -9,13 +9,14 @@ Rails.application.routes.draw do
     resources :addresses, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
-  resources :resigned_customers, only: [:create, :destroy]
+  
   resources :items, only: [:index, :show]
 
   namespace :admin do
     resources :items
     resources :home, only: [:index]
     resources :customers, only: [:index, :show, :destroy]
+    resources :resigned_customers, only: [:create, :destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
