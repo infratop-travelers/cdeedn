@@ -1,4 +1,33 @@
-= form_with model: @customer, url: admin_customer_path do |form|
-  = form.text_field :email
-  = form.password_field :password
+= form_with model: @customer, url: admin_customer_path, method: :put do |form|
+  = form.label :last_name, "姓"
+  = form.text_field :last_name
+  br/
+  = form.label :first_name, "名"
+  = form.text_field :first_name
+  br/
+  = form.label :read_last_name, "セイ"
+  = form.text_field :read_last_name
+  br/
+  = form.label :read_first_name, "メイ"
+  = form.text_field :read_first_name
+  br/
+  = form.label :phone_number, "電話番号"
+  = form.telephone_field :phone_number
+  br/
+  = form.label :post_code, "郵便番号"
+  = form.text_field :post_code
+  br/
+  = form.label :prefecture, "都道府県"
+  = form.text_field :prefecture
+  br/
+  = form.label :city, "市区町村"
+  = form.text_field :city
+  br/
+  = form.label :street, "番地、その他"
+  = form.text_field :street
+  br/
+
+  = form.label :email
+  = form.email_field :email
+  br/
   = form.submit
