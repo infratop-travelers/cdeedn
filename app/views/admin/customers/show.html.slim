@@ -1,1 +1,22 @@
+= link_to "ユーザー一覧画面へ", admin_customers_path
+br
+| 姓  
 = @customer.last_name
+br
+| 名  
+= @customer.first_name
+br
+| セイ
+= @customer.read_last_name
+br
+| メイ
+= @customer.read_first_name
+br
+| 郵便番号  
+= @customer.post_code
+br
+| 住所
+= @customer.prefecture + @customer.city
+br
+| メイ
+= @customer.email
