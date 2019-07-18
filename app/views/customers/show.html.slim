@@ -1,2 +1,57 @@
 h1 Customers#show
-p Find me in app/views/customers/show.html.slim
+
+h2 ユーザー情報
+
+table
+  thead
+    tr
+      th 姓
+      th 名
+      th セイ
+      th メイ
+      th 郵便番号
+      th 住所
+      th 電話番号
+      th メールアドレス
+
+  tbody
+    - @customer.each do |cus|
+      tr
+        td = cus.first_name
+        td = cus.last_name
+        td = cus.read_first_name
+        td = cus.read_last_name
+        td = cus.post_code
+        td = cus.prefecture
+        td = cus.phone_number
+        td = cus.email
+
+table
+    thead
+        tr
+         th あなたがいいねした曲
+    tbody
+       - @customer.favorites.each do |fav|
+        tr
+            td = fav.item_id
+
+= link_to "退会する",customer_registration_path,method: :delete 
+
+
+
+- @customer.orders.each do |order|
+.classCarts 
+    table
+        thead
+            tr
+                th 購入日
+                th 購入内容
+                th 総額
+                th 送付先
+                th 状態
+                
+     
+            
+            
+
+
