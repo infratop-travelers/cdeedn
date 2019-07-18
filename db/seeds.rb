@@ -13,3 +13,8 @@ Customer.create(email: "test4@test4", last_name: "test4last", read_last_name: "�
 Customer.create(email: "test5@test5", last_name: "test5last", read_last_name: "テスト５姓", first_name: "test5name", read_first_name: "テスト５名", phone_number: "testphonenumber", post_code: "test_post_code", prefecture: "test_prefecture", city: "test-city", street: "test-street", password: "testtest")
 Customer.create(email: "test6@test6", last_name: "test6last", read_last_name: "テスト６姓", first_name: "test6name", read_first_name: "テスト６名", phone_number: "testphonenumber", post_code: "test_post_code", prefecture: "test_prefecture", city: "test-city", street: "test-street", password: "testtest")
 Customer.create(email: "test7@test7", last_name: "test7last", read_last_name: "テスト７姓", first_name: "test7name", read_first_name: "テスト７名", phone_number: "testphonenumber", post_code: "test_post_code", prefecture: "test_prefecture", city: "test-city", street: "test-street", password: "testtest")
+
+Singer.create(name: "サカナクション")
+Label.create(name: "JVCケンウッド・ビクターエンタテインメント")
+Genre.create(name: "JPOP")
+Item.create(image_id: "0", singer_id: 1, name: "魚図鑑", price: 7560, label_id: 1, genre_id: 1, stock: 99, delivery_status: 0)
