@@ -3,4 +3,5 @@ p Find me in app/views/cart_items/index.html.slim
 
 - @cart_items.each do |cart_item|
   = cart_item.item.name
+  = cart_item.count
   br/
