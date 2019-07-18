@@ -1,12 +1,13 @@
 h1 Items#show
 div.btn-container
  =link_to "←　一覧ページに戻る", items_path, class: "btn btn-info"
+ a href="#" カートに入れる
  / カートに入れるボタン挿入
 div.item-container.flex
   / 画面左側
   div.side-bar
     div.image-box
-      =@item.image
+      / =@item.image
     div.favorites-box
       / いいねのハート
       / =@item.favorites.count
