@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :customers
 
   resources :customers do
-    resources :curt_items, only: [:index, :create, :destroy]
+    resources :cart_items, only: [:index, :create, :destroy]
     get 'cart_items/confirm'
     resources :addresses, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
