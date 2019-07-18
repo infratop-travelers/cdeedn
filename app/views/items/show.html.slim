@@ -1,12 +1,14 @@
 h1 Items#show
 div.btn-container
  =link_to "←　一覧ページに戻る", items_path, class: "btn btn-info"
+
  / カートに入れるボタン挿入
 div.item-container.flex
   / 画面左側
   div.side-bar
     div.image-box
-      =@item.image
+      / refileで挿入するので多分↓はimage_tagとかそんな感じだった気がする
+      / =@item.image
     div.favorites-box
       / いいねのハート
       / =@item.favorites.count
@@ -24,3 +26,10 @@ div.item-container.flex
           / =@item.disc
 
 
+/ カートに入れる
+= form_for(@cart_item, url: customer_cart_items_path(current_customer), method: :post) do |form|
+  = form.label :count, "個数"
+  = form.number_field :count, in: 1.0..@item.stock, step: 1.0
+  = form.hidden_field :item_id, value: @item.id
+  br/
+  = form.submit

@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   end
   
   def show
-  	@item = Item.find(params[:id])
+    @item = Item.find(params[:id])
+    @cart_item = @item.cart_item.new
   end
 
   private
