@@ -2,7 +2,7 @@ h1 新規商品登録ページ
 = link_to  "商品一覧へ", admin_items_path, class: "btn btn-success"
 .container
   .row
-    = form_with mode: @item, url: admin_items_path, method: :post, local: true do |form|
+    = form_with model: @item, url: admin_items_path, method: :post, local: true do |form|
       = form.label :singer_id, "アーティスト名"
       = form.select :singer_id, @singers
       br/
@@ -21,6 +21,6 @@ h1 新規商品登録ページ
       = form.label :stock, "想定在庫"
       = form.number_field :stock
       br/
-      = form.hidden_field :delivery_status, value: 0
+      = form.hidden_field :delivery_status, value: 1
       br/
       = form.submit class: "btn btn-primary"

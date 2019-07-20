@@ -44,9 +44,9 @@ class Admin::ItemsController < ApplicationController
   end
 
   private
-  def item_params
-    params.require(:item).permit(:image, :singer, :label, :genre, :name, :price, :stock, :delivery_status)
-  end
+    def item_params
+      params.require(:item).permit(:image, :singer, :label, :genre, :name, :price, :stock, :delivery_status, :singer_id, :genre_id, :label_id)
+    end
 end
 
 def pull_down_menu(model)

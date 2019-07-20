@@ -1428,3 +1428,488 @@ Processing by Admin::ItemsController#new as HTML
 Completed 200 OK in 3877ms (Views: 3695.4ms | ActiveRecord: 38.7ms)
 
 
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:02:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NopM9L28GLHziocps4RHKfsfLHlbs6/W+AUvk48uOjWTe6fSNl66/jMGbs3cG12sdq5jCWOjQesimdvPY1vXAQ==", "singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"99", "delivery_status"=>"0", "commit"=>"Save "}
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/admin/items_controller.rb:48:in `item_params'
+app/controllers/admin/items_controller.rb:18:in `create'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:03:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NopM9L28GLHziocps4RHKfsfLHlbs6/W+AUvk48uOjWTe6fSNl66/jMGbs3cG12sdq5jCWOjQesimdvPY1vXAQ==", "singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"99", "delivery_status"=>"0", "commit"=>"Save "}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/admin/items_controller.rb:48:in `item_params'
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:03:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (6.0ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mGenre Load (3.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mLabel Load (6.9ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (42.5ms)
+Completed 200 OK in 1033ms (Views: 959.7ms | ActiveRecord: 16.5ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:03:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r6ZVL3hUv/QLUcOJCT7laEulLhJzRZtZs2ae2lypMKkKV74J87Ydu8vdKm1mof/txhRhYktVdWRp+mqGsNzdnQ==", "singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"99", "delivery_status"=>"0", "image_id"=>"0", "commit"=>"Save "}
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/admin/items_controller.rb:48:in `item_params'
+app/controllers/admin/items_controller.rb:18:in `create'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:05:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r6ZVL3hUv/QLUcOJCT7laEulLhJzRZtZs2ae2lypMKkKV74J87Ydu8vdKm1mof/txhRhYktVdWRp+mqGsNzdnQ==", "singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"99", "delivery_status"=>"0", "image_id"=>"0", "commit"=>"Save "}
+Completed 400 Bad Request in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/admin/items_controller.rb:48:in `item_params'
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/customers" for 10.0.2.2 at 2019-07-20 12:06:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.slim within layouts/application
+  [1m[36mCustomer Load (2.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.slim:6
+  Rendered admin/customers/index.html.slim within layouts/application (21.9ms)
+Completed 200 OK in 3470ms (Views: 3411.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/admin/customers/5/edit" for 10.0.2.2 at 2019-07-20 12:07:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:11
+Completed 404 Not Found in 97ms (ActiveRecord: 10.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=5):
+  
+app/controllers/admin/customers_controller.rb:11:in `edit'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:10:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r6ZVL3hUv/QLUcOJCT7laEulLhJzRZtZs2ae2lypMKkKV74J87Ydu8vdKm1mof/txhRhYktVdWRp+mqGsNzdnQ==", "singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"99", "delivery_status"=>"0", "image_id"=>"0", "commit"=>"Save "}
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/admin/items_controller.rb:48:in `item_params'
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/items" for 10.0.2.2 at 2019-07-20 12:12:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#index as HTML
+  Rendering admin/items/index.html.slim within layouts/application
+  [1m[36mItem Load (2.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/admin/items/index.html.slim:3
+  Rendered admin/items/index.html.slim within layouts/application (10.4ms)
+Completed 200 OK in 868ms (Views: 801.2ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:16:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (2.3ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mLabel Load (1.6ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (57.8ms)
+Completed 200 OK in 1499ms (Views: 1206.4ms | ActiveRecord: 33.4ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:16:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H6FQNzn4DKlwtvU+ym/MfgPqgu7NaLY0S8FjatvnhxD1XWFXeCzDYQ35TRapdzTYSUSjZoV9KhpVWjcFAKsxqw==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"99", "delivery_status"=>"0", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('0' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:17:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (1.2ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mGenre Load (4.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mLabel Load (2.8ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (64.3ms)
+Completed 200 OK in 3374ms (Views: 3182.1ms | ActiveRecord: 45.8ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:17:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ejZAiXn5LwGc0pnYGKgKlluomxtVfDp6OQRORR0uEmXfx6uv8huNTlxecDx3NxAT1hnUa21s1EfjmLoZ8Vv/UQ==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"99", "delivery_status"=>"0", "image_id"=>"1"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('0' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:18:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ejZAiXn5LwGc0pnYGKgKlluomxtVfDp6OQRORR0uEmXfx6uv8huNTlxecDx3NxAT1hnUa21s1EfjmLoZ8Vv/UQ==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"99", "delivery_status"=>"0", "image_id"=>"1"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('0' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:18:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (2.3ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mGenre Load (2.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mLabel Load (0.8ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (19.9ms)
+Completed 200 OK in 999ms (Views: 943.2ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:18:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e0YDltKmvj+ZmEzq79dg7uye6m2+xKwx7sZ3BCNTELDet+iwWUQccFkUpQ6ASHprYS+lHYbUQgw0WoNYzyb9hA==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"test", "stock"=>"99", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('1' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:18:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (1.6ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mLabel Load (1.4ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (11.4ms)
+Completed 200 OK in 964ms (Views: 912.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:18:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"suj8gwcyLJuz9ZF3gfFPTti+UyOX3B7mjBmYLMExBncXGReljNCO1HN5eJPublXLVQ8cU6/M8NtWhWxwLUTrQw==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('1' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:20:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"suj8gwcyLJuz9ZF3gfFPTti+UyOX3B7mjBmYLMExBncXGReljNCO1HN5eJPublXLVQ8cU6/M8NtWhWxwLUTrQw==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 12.7ms)
+
+
+  
+ArgumentError ('1' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:20:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (2.9ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mLabel Load (3.6ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (53.8ms)
+Completed 200 OK in 4713ms (Views: 4475.8ms | ActiveRecord: 47.0ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:20:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGA5yllgYVJllrYaAg5P5Y4ScaHeWvktHtHEKnuWR/m9kdLs0oLDHaUaX/5tkVVgA6M+0eZKFxDETTB2l+OqzQ==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('1' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:21:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (1.6ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mGenre Load (2.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mLabel Load (0.9ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (56.3ms)
+Completed 200 OK in 3277ms (Views: 3101.9ms | ActiveRecord: 41.1ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:21:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OQ9if+3saoz6i4723VFhuiIR7Sb06G/HyjN2us9dQ0+c/olZZg7IwzoHZxKyzns/r6CiVsz4gfoQr4LmIyiuew==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('1' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:25:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (14.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OQ9if+3saoz6i4723VFhuiIR7Sb06G/HyjN2us9dQ0+c/olZZg7IwzoHZxKyzns/r6CiVsz4gfoQr4LmIyiuew==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 65.4ms)
+
+
+  
+ArgumentError ('1' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:26:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OQ9if+3saoz6i4723VFhuiIR7Sb06G/HyjN2us9dQ0+c/olZZg7IwzoHZxKyzns/r6CiVsz4gfoQr4LmIyiuew==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('1' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:26:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (2.6ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mGenre Load (3.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  [1m[36mLabel Load (2.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:54
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (87.4ms)
+Completed 200 OK in 4355ms (Views: 4010.0ms | ActiveRecord: 45.2ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:26:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4O0Ep6iiQuGSBSIn7AJ93vK/jxwkgk89aJQds0WGUqhFHO+BI0DgrlKJy8ODnWdbfw7AbBySoQCyCOnvqfO/nA==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError ('1' is not a valid delivery_status):
+  
+app/controllers/admin/items_controller.rb:18:in `create'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:27:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4O0Ep6iiQuGSBSIn7AJ93vK/jxwkgk89aJQds0WGUqhFHO+BI0DgrlKJy8ODnWdbfw7AbBySoQCyCOnvqfO/nA==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameters: :singer_id, :genre_id, :label_id, :image_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:20
+Redirected to http://localhost:3000/admin/items
+Completed 302 Found in 183ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/admin/items" for 10.0.2.2 at 2019-07-20 12:27:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#index as HTML
+  Rendering admin/items/index.html.slim within layouts/application
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/admin/items/index.html.slim:3
+  Rendered admin/items/index.html.slim within layouts/application (15.1ms)
+Completed 200 OK in 3193ms (Views: 3071.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:29:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4O0Ep6iiQuGSBSIn7AJ93vK/jxwkgk89aJQds0WGUqhFHO+BI0DgrlKJy8ODnWdbfw7AbBySoQCyCOnvqfO/nA==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"0"}, "commit"=>"Create Item"}
+Unpermitted parameter: :image_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mSinger Load (0.3ms)[0m  [1m[34mSELECT  "singers".* FROM "singers" WHERE "singers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mLabel Load (0.4ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mItem Create (2.8ms)[0m  [1m[32mINSERT INTO "items" ("singer_id", "name", "price", "label_id", "genre_id", "stock", "delivery_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["singer_id", 3], ["name", "1"], ["price", 1], ["label_id", 2], ["genre_id", 2], ["stock", 1], ["delivery_status", 1], ["created_at", "2019-07-20 12:29:10.212245"], ["updated_at", "2019-07-20 12:29:10.212245"]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:20
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 24.4ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: items.image_id: INSERT INTO "items" ("singer_id", "name", "price", "label_id", "genre_id", "stock", "delivery_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/admin/items_controller.rb:20:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:30:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (1.1ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:55
+  [1m[36mGenre Load (4.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:55
+  [1m[36mLabel Load (1.9ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:55
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (209.7ms)
+Completed 200 OK in 3897ms (Views: 3842.9ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:30:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nV0pD76VGxXggNu2gtbsC+C1WpV8dXl6bpZQL5uM6604rMIpNXe5WiAMMlLtSfaObQQV5URll0e0CqRzd/kGmQ==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"10101001010"}, "commit"=>"Create Item"}
+Unpermitted parameter: :image_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mSinger Load (3.1ms)[0m  [1m[34mSELECT  "singers".* FROM "singers" WHERE "singers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mItem Create (1.4ms)[0m  [1m[32mINSERT INTO "items" ("singer_id", "name", "price", "label_id", "genre_id", "stock", "delivery_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["singer_id", 3], ["name", "1"], ["price", 1], ["label_id", 2], ["genre_id", 2], ["stock", 1], ["delivery_status", 1], ["created_at", "2019-07-20 12:30:25.122642"], ["updated_at", "2019-07-20 12:30:25.122642"]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:20
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 5.3ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: items.image_id: INSERT INTO "items" ("singer_id", "name", "price", "label_id", "genre_id", "stock", "delivery_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/admin/items_controller.rb:20:in `create'
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:31:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nV0pD76VGxXggNu2gtbsC+C1WpV8dXl6bpZQL5uM6604rMIpNXe5WiAMMlLtSfaObQQV5URll0e0CqRzd/kGmQ==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image_id"=>"10101001010"}, "commit"=>"Create Item"}
+Unpermitted parameter: :image_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mSinger Load (10.5ms)[0m  [1m[34mSELECT  "singers".* FROM "singers" WHERE "singers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mLabel Load (0.1ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("singer_id", "name", "price", "label_id", "genre_id", "stock", "delivery_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["singer_id", 3], ["name", "1"], ["price", 1], ["label_id", 2], ["genre_id", 2], ["stock", 1], ["delivery_status", 1], ["created_at", "2019-07-20 12:31:42.328333"], ["updated_at", "2019-07-20 12:31:42.328333"]]
+  ↳ app/controllers/admin/items_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:20
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 11.9ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: items.image_id: INSERT INTO "items" ("singer_id", "name", "price", "label_id", "genre_id", "stock", "delivery_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/admin/items_controller.rb:20:in `create'
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 12:31:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (2.6ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:55
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:55
+  [1m[36mLabel Load (0.7ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:55
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (6.9ms)
+Completed 200 OK in 1310ms (Views: 1241.1ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 12:31:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3M6G0uHuIADmseFihvOayKmm30Z9gSL+qAgKh87v0p55P230agyCTyY9CIbpbIBNJBeQNkWRzMNylP7bIpo/qg==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"1", "name"=>"1", "stock"=>"1", "delivery_status"=>"1", "image"=>"10101001010"}, "commit"=>"Create Item"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'image' for Item.):
+  
+app/controllers/admin/items_controller.rb:19:in `create'
