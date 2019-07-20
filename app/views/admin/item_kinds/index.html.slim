@@ -1,8 +1,43 @@
 .container.item-kinds
+  h1 アーティスト、レーベル、ジャンル管理ページ
+  .row
+    .col-lg-4
+      | アーティスト新規登録
+      br/
+      = form_with model: @singer, url: admin_singers_path, method: :post, local: true do |form|
+        = form.label :name, "アーティスト名"
+        = form.text_field :name
+        br/
+        = form.submit
+    .col-lg-4
+      | レーベル新規登録
+      br/
+      = form_with model: @label, url: admin_labels_path, method: :post, local: true do |form|
+        = form.label :name, "レーベル名"
+        = form.text_field :name
+        br/
+        = form.submit
+    .col-lg-4
+      | ジャンル新規登録
+      br/
+      = form_with model: @genre, url: admin_genres_path, method: :post, local: true do |form|
+        = form.label :name, "ジャンル名"
+        = form.text_field :name
+        br/
+        = form.submit
   .row
     .col-lg-4.singer
-      | singer
+      | アーティスト一覧
+      - @singers.each do |singer|
+        br/
+        = singer.name
     .col-lg-4.label
-      | label
+      | レーベル一覧
+      - @labels.each do |label|
+        br/
+        = label.name
     .col-lg-4.genre
-      | genre
+      | ジャンル一覧
+      - @genres.each do |genre|
+        br/
+        = genre.name
