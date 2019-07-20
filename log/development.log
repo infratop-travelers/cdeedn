@@ -2179,3 +2179,114 @@ Started GET "/attachments/55f9917a7b9ad2034be831f4f648124ab410c68f/store/fill/30
 Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 Refile::App: [2019-07-20 13:00:53 +0000] GET "/55f9917a7b9ad2034be831f4f648124ab410c68f/store/fill/300/300/6e62f7fda253c23b6faaad5a586ae7971cd4b93c340c360c58fc8a655231/image" 200 126.5ms
 
+Started GET "/admin/items" for 10.0.2.2 at 2019-07-20 13:01:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#index as HTML
+  Rendering admin/items/index.html.slim within layouts/application
+  [1m[36mItem Load (2.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/admin/items/index.html.slim:3
+  Rendered admin/items/index.html.slim within layouts/application (14.2ms)
+Completed 200 OK in 1677ms (Views: 1418.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/admin/items" for 10.0.2.2 at 2019-07-20 13:02:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#index as HTML
+  Rendering admin/items/index.html.slim within layouts/application
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/admin/items/index.html.slim:4
+  Rendered admin/items/index.html.slim within layouts/application (13.2ms)
+Completed 200 OK in 943ms (Views: 879.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/attachments/7488abb2d773c1ae9e802ac49bd5802566447dbf/store/6e62f7fda253c23b6faaad5a586ae7971cd4b93c340c360c58fc8a655231/image" for 10.0.2.2 at 2019-07-20 13:02:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2019-07-20 13:02:17 +0000] GET "/7488abb2d773c1ae9e802ac49bd5802566447dbf/store/6e62f7fda253c23b6faaad5a586ae7971cd4b93c340c360c58fc8a655231/image" 200 34.9ms
+
+Started GET "/admin/items" for 10.0.2.2 at 2019-07-20 13:02:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#index as HTML
+  Rendering admin/items/index.html.slim within layouts/application
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/admin/items/index.html.slim:4
+  Rendered admin/items/index.html.slim within layouts/application (10.7ms)
+Completed 200 OK in 891ms (Views: 847.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/attachments/03ac0e7c90c531a1ec8432609f651474de4e547a/store/fill/50/50/6e62f7fda253c23b6faaad5a586ae7971cd4b93c340c360c58fc8a655231/image" for 10.0.2.2 at 2019-07-20 13:02:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2019-07-20 13:02:30 +0000] GET "/03ac0e7c90c531a1ec8432609f651474de4e547a/store/fill/50/50/6e62f7fda253c23b6faaad5a586ae7971cd4b93c340c360c58fc8a655231/image" 200 55.6ms
+
+Started GET "/admin/items/new" for 10.0.2.2 at 2019-07-20 13:02:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mSinger Load (1.8ms)[0m  [1m[34mSELECT "singers".* FROM "singers"[0m
+  ↳ app/controllers/admin/items_controller.rb:58
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/controllers/admin/items_controller.rb:58
+  [1m[36mLabel Load (2.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/admin/items_controller.rb:58
+  Rendering admin/items/new.html.slim within layouts/application
+  Rendered admin/items/new.html.slim within layouts/application (51.7ms)
+Completed 200 OK in 1176ms (Views: 965.6ms | ActiveRecord: 25.7ms)
+
+
+Started POST "/admin/items" for 10.0.2.2 at 2019-07-20 13:02:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"58kEWgV0nc/VQq+FqAik7YzPePU9wSGVOFxoh9ong+cNNTU6RKBSB6gNF63LEFxLxmFZfXXUvbsmxzzoAWs1XA==", "item"=>{"singer_id"=>"3", "genre_id"=>"2", "label_id"=>"2", "price"=>"7560", "name"=>"魚図鑑", "stock"=>"141", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f90f037d470 @tempfile=#<Tempfile:/tmp/RackMultipart20190720-13218-1veapkh.png>, @original_filename="kisetsu9gatsu01aki_009.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"item[image]\"; filename=\"kisetsu9gatsu01aki_009.png\"\r\nContent-Type: image/png\r\n">, "delivery_status"=>"undispatched"}, "commit"=>"Create Item"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:23
+  [1m[36mSinger Load (6.5ms)[0m  [1m[34mSELECT  "singers".* FROM "singers" WHERE "singers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:23
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:23
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:23
+  [1m[36mItem Create (8.9ms)[0m  [1m[32mINSERT INTO "items" ("image_id", "singer_id", "name", "price", "label_id", "genre_id", "stock", "delivery_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image_id", "60796f5bca61e113119b1e851e5c016aeda45667f1dbcbe577ba7c82c1cd"], ["singer_id", 3], ["name", "魚図鑑"], ["price", 7560], ["label_id", 2], ["genre_id", 2], ["stock", 141], ["delivery_status", 0], ["created_at", "2019-07-20 13:03:00.104494"], ["updated_at", "2019-07-20 13:03:00.104494"]]
+  ↳ app/controllers/admin/items_controller.rb:23
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/items_controller.rb:23
+Redirected to http://localhost:3000/admin/items/2
+Completed 302 Found in 129ms (ActiveRecord: 30.0ms)
+
+
+Started GET "/admin/items/2" for 10.0.2.2 at 2019-07-20 13:03:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (3.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/items_controller.rb:7
+  Rendering admin/items/show.html.slim within layouts/application
+  Rendered admin/items/show.html.slim within layouts/application (4.8ms)
+Completed 200 OK in 745ms (Views: 705.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/attachments/41c19b874e04672edb33c5b866198c498c37af49/store/fill/300/300/60796f5bca61e113119b1e851e5c016aeda45667f1dbcbe577ba7c82c1cd/image" for 10.0.2.2 at 2019-07-20 13:03:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2019-07-20 13:03:01 +0000] GET "/41c19b874e04672edb33c5b866198c498c37af49/store/fill/300/300/60796f5bca61e113119b1e851e5c016aeda45667f1dbcbe577ba7c82c1cd/image" 200 448.5ms
+
+Started GET "/admin/items" for 10.0.2.2 at 2019-07-20 13:03:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#index as HTML
+  Rendering admin/items/index.html.slim within layouts/application
+  [1m[36mItem Load (7.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/admin/items/index.html.slim:4
+  Rendered admin/items/index.html.slim within layouts/application (22.2ms)
+Completed 200 OK in 1517ms (Views: 1382.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/attachments/dd3445c653e2ad6740cae6e130a3e98dbce71546/store/fill/50/50/60796f5bca61e113119b1e851e5c016aeda45667f1dbcbe577ba7c82c1cd/image" for 10.0.2.2 at 2019-07-20 13:03:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2019-07-20 13:03:05 +0000] GET "/dd3445c653e2ad6740cae6e130a3e98dbce71546/store/fill/50/50/60796f5bca61e113119b1e851e5c016aeda45667f1dbcbe577ba7c82c1cd/image" 200 201.4ms
+
+Started GET "/admin/items" for 10.0.2.2 at 2019-07-20 13:03:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ItemsController#index as HTML
+  Rendering admin/items/index.html.slim within layouts/application
+  [1m[36mItem Load (2.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/admin/items/index.html.slim:4
+  Rendered admin/items/index.html.slim within layouts/application (8.7ms)
+Completed 200 OK in 861ms (Views: 791.6ms | ActiveRecord: 2.1ms)
+
+
