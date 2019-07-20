@@ -9,6 +9,12 @@ class Admin::SingersController < ApplicationController
         end
     end
 
+    def destroy
+        @singer = Singer.find(params[:id])
+        @singer.delete
+        redirect_to admin_item_kinds_path
+    end
+
     private
         def singer_params
             params.require(:singer).permit(:name)

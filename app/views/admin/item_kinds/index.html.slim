@@ -31,13 +31,19 @@
       - @singers.each do |singer|
         br/
         = singer.name
+        br/
+        = link_to  "#{singer.name}を削除する", admin_singer_path(singer), method: :delete, data: { confirm: "#{singer.name}をアーティスト一覧から削除しますか？"}, class: "btn btn-danger"
     .col-lg-4.label
       | レーベル一覧
       - @labels.each do |label|
         br/
         = label.name
+        br/
+        = link_to  "#{label.name}を削除する", admin_label_path(label), method: :delete, data: { confirm: "#{label.name}をレーベル一覧から削除しますか？"}, class: "btn btn-danger"
     .col-lg-4.genre
       | ジャンル一覧
       - @genres.each do |genre|
         br/
         = genre.name
+        br/
+        = link_to  "#{genre.name}を削除する", admin_genre_path(genre), method: :delete, data: { confirm: "#{genre.name}をジャンル一覧から削除しますか？"}, class: "btn btn-danger"

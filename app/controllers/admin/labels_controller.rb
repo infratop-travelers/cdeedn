@@ -8,6 +8,12 @@ class Admin::LabelsController < ApplicationController
         end
     end
 
+    def destroy
+        @label = Label.find(params[:id])
+        @label.delete
+        redirect_to admin_item_kinds_path
+    end
+
     private
         def label_params
             params.require(:label).permit(:name)

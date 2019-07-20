@@ -9,6 +9,12 @@ class Admin::GenresController < ApplicationController
         end
     end
 
+    def destroy
+        @genre = Genre.find(params[:id])
+        @genre.delete
+        redirect_to admin_item_kinds_path
+    end
+
     private
         def genre_params
             params.require(:genre).permit(:name)
