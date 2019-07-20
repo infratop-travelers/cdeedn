@@ -2,9 +2,16 @@ class Admin::ItemsController < ApplicationController
   def index
     @items = Item.all
   end
+
+  def show
+    @item = Item.find(params[:id])
+  end
   
   def new
-    @item = Item.new(item_params)
+    @item = Item.new
+    @singers = pull_down_menu(Singer.all)
+    @genres = pull_down_menu(Genre.all)
+    @labels = pull_down_menu(Label.all)
   end
 
   def edit
@@ -41,7 +48,15 @@ class Admin::ItemsController < ApplicationController
   end
 
   private
-  def item_params
-    params.require(:item).permit(:image, :singer, :label, :genre, :name, :price, :stock, :delivery_status)
+    def item_params
+      params.require(:item).permit(:image, :singer, :label, :genre, :name, :price, :stock, :delivery_status, :singer_id, :genre_id, :label_id)
+    end
+end
+
+def pull_down_menu(model)
+  menu_array = []
+  model.each do |m|
+    menu_array += [[m.name, m.id]]
   end
+  return menu_array
 end
