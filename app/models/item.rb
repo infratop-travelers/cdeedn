@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
     enum delivery_status: [ :undispatched, :sent, :delivered ]
 
+    attachment :image
+
     has_many :favorites
     has_many :discs
     has_many :cart_item

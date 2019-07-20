@@ -21,6 +21,10 @@ h1 新規商品登録ページ
       = form.label :stock, "想定在庫"
       = form.number_field :stock
       br/
+      = form.attachment_field :image
+      br/
+      = attachment_image_tag @item, :image, :fill, 100, 100
+      br/
       = form.hidden_field :delivery_status, value: :undispatched
       br/
       = form.submit class: "btn btn-primary"
