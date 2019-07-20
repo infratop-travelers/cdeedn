@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-    # enum delivery_status: {　undispatched: 1, sent: 2,　Delivered: 3}
+    enum delivery_status: [ :undispatched, :sent, :delivered ]
 
     has_many :favorites
     has_many :discs
