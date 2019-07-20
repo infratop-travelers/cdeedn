@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+    enum delivery_status: [['未発送', 0], ['発送済み', 1],['配達済み', 2]]
+
     has_many :favorites
     has_many :discs
     has_many :cart_item
