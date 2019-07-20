@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :items
+    resources :item_kinds, only: [:index, :edit, :update, :create, :destroy]
     resources :home, only: [:index]
     resources :customers, only: [:index, :show, :edit, :update, :destroy]
     resources :resigned_customers, only: [:create,:update, :destroy]
