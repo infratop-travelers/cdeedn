@@ -1,2 +1,13 @@
-h1 Admin::Items#new
-p Find me in app/views/admin/items/new.html.slim
+h1 新規商品登録ページ
+= link_to  "商品一覧へ", admin_items_path, class: "btn btn-success"
+.container
+  .row
+    = form_with mode: @item, url: admin_items_path, method: :post, local: true do |form|
+      = form.label :singer_id, "アーティスト名"
+      = form.select :singer_id, @singers
+      br/
+      = form.label :genre_id, "ジャンル名"
+      = form.select :genre_id, @genres
+      br/
+      = form.label :label_id, "ラベル名"
+      = form.select :label_id, @singers
