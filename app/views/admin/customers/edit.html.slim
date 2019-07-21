@@ -1,11 +1,4 @@
-- if @customer.errors.any?
-  #error_explanation.alert.alert-danger
-    ul
-      li
-        h4 error
-      - @customer.errors.full_messages.each do |message|
-        li
-          = message
+= render "/layouts/errors", model: @customer
         
 = form_with model: @customer, url: admin_customer_path, method: :put, local: true do |form|
   = form.label :last_name, "姓"
