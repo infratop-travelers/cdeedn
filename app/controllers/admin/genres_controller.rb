@@ -17,6 +17,23 @@ class Admin::GenresController < ApplicationController
         end
     end
 
+    def update
+        @genre = Genre.find(params[:id])
+        if @genre.update(genre_params)
+            redirect_to admin_item_kinds_path
+        else
+            @singers = Singer.all
+            @genres = Genre.all
+            @labels = Label.all
+
+            @singer = Singer.new
+            @label = Label.new
+
+            @genre_error= "ジャンル: #{@genre.name} でのエラーです"
+            render ("admin/item_kinds/index")
+        end
+    end
+
     def destroy
         @genre = Genre.find(params[:id])
         @genre.delete

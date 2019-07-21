@@ -17,43 +17,25 @@
 //= require popper
 //= require bootstrap-sprockets
 
-// song編集用
-let songEdit = document.querySelectorAll(".song-edit")
-let songEditBtn = document.querySelectorAll(".song-edit-btn")
-let song_count = []
-for(let i = 0; i < songEditBtn.length;i++){
-    song_count.push(0)
-}
-// console.log(songEdit[0])
-for(let i=0; i < songEditBtn.length; i++) {
-    songEditBtn[i].addEventListener("click", (e) => {
-        song_count[i]++;
-        if(song_count[i]%2 !== 0){
-            songEdit[i].style.display = "block"
-        } else {
-            songEdit[i].style.display = "none"
-            song_count[i]=0
-        }
-    })
-}
+editBtn(".song-edit", ".song-edit-btn")
+editBtn(".disc-edit", ".disc-edit-btn")
 
-// song編集用
-let discEdit = document.querySelectorAll(".disc-edit")
-let discEditBtn = document.querySelectorAll(".disc-edit-btn")
-let disc_count = []
-for(let i = 0; i < discEditBtn.length;i++){
-    disc_count.push(0)
+function editBtn(editBody,editBodyBtn){
+    let hogeEdit = document.querySelectorAll(editBody)
+    let hogeEditBtn = document.querySelectorAll(editBodyBtn)
+    let hoge_count = []
+    for(let i=0;i<hogeEditBtn.length;i++){
+        hoge_count.push(0)
+    }
+    for(let i=0;i<hogeEditBtn.length;i++){
+        hogeEditBtn[i].addEventListener("click", () => {
+            hoge_count[i]++;
+            if(hoge_count[i]%2 !== 0){
+                hogeEdit[i].style.display = "block";
+            } else {
+                hogeEdit[i].style.display = "none";
+                hoge_count[i]=0
+            }
+        })
+    }
 }
-// console.log(discEdit[0])
-for(let i=0; i < discEditBtn.length; i++) {
-    discEditBtn[i].addEventListener("click", (e) => {
-        disc_count[i]++;
-        if(disc_count[i]%2 !== 0){
-            discEdit[i].style.display = "block"
-        } else {
-            discEdit[i].style.display = "none"
-            disc_count[i]=0
-        }
-    })
-}
-
