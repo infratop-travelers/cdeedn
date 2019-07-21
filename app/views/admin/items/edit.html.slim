@@ -53,7 +53,7 @@ br/
         .danger.alert-danger.alert
           | ディスクを追加してください
       - else
-        = form_with model: @song, url: admin_item_songs_path(@item), method: :post, local: true do |form|
+        - form_with model: @song, url: admin_item_songs_path(@item), method: :post, local: true do |form|
           = form.label :name, "曲名"
           = form.text_field :name
           br/
@@ -70,3 +70,15 @@ br/
             = "曲名    " + song.name
             = "    曲番号" + song.number.to_s
             = "    ディスク番号"+ song.disc_id.to_s
+            br/
+            - form_with model: song, url: admin_item_disc_song_path(song), method: :put, local: true do |form|
+              = form.label :name, "曲名"
+              = form.text_field :name
+              br/
+              = form.label :disc_id, "disc番号"
+              = form.number_field :disc_id
+              br/
+              = form.label :number, "曲順"
+              = form.number_field :number
+              br/
+              = form.submit class: "btn btn-success"
