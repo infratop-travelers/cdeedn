@@ -58,11 +58,3 @@ class Admin::ItemsController < ApplicationController
       params.require(:item).permit(:image, :singer, :label, :genre, :name, :price, :stock, :delivery_status, :singer_id, :genre_id, :label_id)
     end
 end
-
-def pull_down_menu(model)
-  menu_array = []
-  model.each do |m|
-    menu_array += [[m.name, m.id]]
-  end
-  return menu_array
-end
