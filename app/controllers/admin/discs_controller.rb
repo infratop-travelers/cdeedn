@@ -11,14 +11,25 @@ class Admin::DiscsController < ApplicationController
             @item = Item.find(params[:item_id])
             @item_discs = @item.discs.all
             @song = Song.new
+            @disc_error = "新規ディスクでのエラーです"
             render("admin/items/edit")
         end
     end
 
     def update
         @disc = Disc.find(params[:id])
-        @disc.update(disc_params)
-        redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
+        if @disc.update(disc_params)
+            redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
+        else
+            @singers = pull_down_menu(Singer.all)
+            @genres = pull_down_menu(Genre.all)
+            @labels = pull_down_menu(Label.all)
+            @item = Item.find(params[:item_id])
+            @item_discs = @item.discs.all
+            @song = Song.new
+            @disc_error = "ディスク固有id  #{@disc.id}のディスクでのエラーです"
+            render("admin/items/edit")
+        end
     end
 
     def destroy

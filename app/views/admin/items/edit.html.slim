@@ -34,7 +34,7 @@ br/
     | ディスクは中に曲が入っている状態では消すことができません!
   .row
     .col-lg-6.create-disc
-      = render "/layouts/errors", model: @disc
+      = render "/layouts/errors", model: @disc, model_error: @disc_error
       | ディスク登録
       br/
       = form_with model: @disc, url: admin_item_discs_path(@item), method: :post, local: true do |form|

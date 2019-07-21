@@ -1,4 +1,4 @@
-= render "/layouts/errors", model: @customer
+= render "/layouts/errors", model: @customer, model_error: @customer_error
         
 = form_with model: @customer, url: admin_customer_path, method: :put, local: true do |form|
   = form.label :last_name, "姓"
