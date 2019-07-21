@@ -3593,3 +3593,2129 @@ Completed 200 OK in 2672ms (Views: 2465.5ms | ActiveRecord: 1.5ms)
 Completed 200 OK in 1639ms (Views: 1520.0ms | ActiveRecord: 3.8ms)
 
 
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (3.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 06:15:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P6sHWs4qLrfr6NqH/+e1FwywgzG0ysM5jgR48u/h+CJtW2Jf+SVy4V//6gMuguA+B+ZRQzQgBABatE9AonvZig==", "customer"=>{"email"=>"turu@turu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (4.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "turu@turu"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (4.0ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (142.5ms)
+Completed 200 OK in 17598ms (Views: 16985.7ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/customers" for 10.0.2.2 at 2019-07-21 06:32:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 06:32:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (2.9ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (103.9ms)
+Completed 200 OK in 4899ms (Views: 4837.2ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:32:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (73.4ms)
+Completed 200 OK in 1016ms (Views: 1014.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:36:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (190.4ms)
+Started GET "/" for 10.0.2.2 at 2019-07-21 06:36:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Completed 200 OK in 4270ms (Views: 4219.1ms | ActiveRecord: 16.9ms)
+
+
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (5.5ms)
+Completed 200 OK in 1288ms (Views: 1203.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:37:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (75.3ms)
+Completed 200 OK in 901ms (Views: 899.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:40:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (145.5ms)
+Completed 200 OK in 5441ms (Views: 5247.1ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 06:40:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (3.1ms)
+Completed 200 OK in 1158ms (Views: 1083.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:41:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (65.0ms)
+Completed 200 OK in 838ms (Views: 835.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:42:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (74.3ms)
+Completed 200 OK in 1705ms (Views: 1703.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 06:42:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 938ms (Views: 936.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:42:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (97.4ms)
+Completed 200 OK in 1251ms (Views: 1249.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:43:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (81.4ms)
+Completed 200 OK in 3441ms (Views: 3439.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 06:43:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 1022ms (Views: 1020.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 06:50:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (2.2ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (135.5ms)
+Completed 200 OK in 4808ms (Views: 4756.9ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/customers/" for 10.0.2.2 at 2019-07-21 06:51:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 06:51:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered customers/shared/_links.html.erb (2.2ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (123.2ms)
+Completed 200 OK in 1189ms (Views: 1187.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 06:52:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b7khXiJ6KtQR8Gbe4uUw21/Xh64k8EsyCE6ZJCH3Uhg9SURbFXV2gqXnVlozgGXyVIFV3KQajAvc/q6WbG1zsA==", "customer"=>{"last_name"=>"シミズ", "first_name"=>"ダイスケ", "read_last_name"=>"しみず", "read_first_name"=>"だいすけ", "post_code"=>"123456", "prefecture"=>"神奈川", "city"=>"横浜", "street"=>"日吉", "phone_number"=>"12345678", "email"=>"sss@sss", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (5.0ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "sss@sss"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (3.1ms)
+  Rendered customers/shared/_links.html.erb (1.1ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (124.0ms)
+Completed 200 OK in 1729ms (Views: 1308.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/customers" for 10.0.2.2 at 2019-07-21 07:01:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (undefined local variable or method `devise_parameter_sanitizer' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/customers_controller.rb:1:in `<top (required)>'
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 07:01:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (undefined local variable or method `devise_parameter_sanitizer' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:01:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (undefined local variable or method `devise_parameter_sanitizer' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:04:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered customers/shared/_links.html.erb (2.4ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (213.5ms)
+Completed 200 OK in 5091ms (Views: 5038.1ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:04:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yaUmpFJ/JrESzskQnRQmJUeg0zcjIuELlLfavnoutBmbVUOhZXB656bZ+ZRMcXMMTPYBRaPIJjJAB+0MN7SVsQ==", "customer"=>{"last_name"=>"simizu", "first_name"=>"aa", "read_last_name"=>"", "read_first_name"=>"", "post_code"=>"", "prefecture"=>"", "city"=>"", "street"=>"", "phone_number"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (8.1ms)
+  Rendered customers/shared/_links.html.erb (1.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (154.9ms)
+Completed 200 OK in 1580ms (Views: 1371.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers" for 10.0.2.2 at 2019-07-21 07:07:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:07:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (1.6ms)
+  Rendered customers/shared/_links.html.erb (2.4ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (106.1ms)
+Completed 200 OK in 1286ms (Views: 1283.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:08:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XZolK0terU5heStq6azYrLhqt7L/xnLaob1+N9B5yG8PakAufFHxGNVuG+44yY2FszxlwH8steN1DUmFnePpxw==", "customer"=>{"last_name"=>"シミズ", "first_name"=>"ああ", "read_last_name"=>"ああ", "read_first_name"=>"ああ", "post_code"=>"ああ", "prefecture"=>"ああ", "city"=>"ああ", "street"=>"ああ", "phone_number"=>"ああ", "email"=>"q@q", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (6.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "q@q"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (2.9ms)
+  Rendered customers/shared/_links.html.erb (1.3ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 1761ms (Views: 1214.7ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/customers" for 10.0.2.2 at 2019-07-21 07:13:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:13:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered customers/shared/_links.html.erb (1.1ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (180.5ms)
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:13:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered customers/shared/_links.html.erb (2.5ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (173.2ms)
+Completed 200 OK in 5006ms (Views: 4925.2ms | ActiveRecord: 14.0ms)
+
+
+Completed 200 OK in 1441ms (Views: 1439.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:13:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hrDtiJO2BJTUfO+hU7AhA1wePPmz/ZSe2gaO6KH4jljUQIiNpLlYwmBr3yWC1XQqV0juizMXU6cOtrla7GKv8A==", "customer"=>{"last_name"=>"aaa", "first_name"=>"aaa", "read_last_name"=>"aaa", "read_first_name"=>"aaa", "post_code"=>"123456", "prefecture"=>"kanagawa", "city"=>"yokohama", "street"=>"hiyoshi", "phone_number"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (4.5ms)
+  Rendered customers/shared/_links.html.erb (3.0ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (156.8ms)
+Completed 200 OK in 1718ms (Views: 1507.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:14:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"17qW3nxQcCXYJs0/psJcei2glaypOnVXfhtPE6I5W0OFSvPbS18sc2wx/bt3pwlTJvZH3inQsm6qq3ih76N66w==", "customer"=>{"last_name"=>"ttt", "first_name"=>"ttt", "read_last_name"=>"ttt", "read_first_name"=>"ttt", "post_code"=>"123456", "prefecture"=>"tttt", "city"=>"yyyy", "street"=>"yyyy", "phone_number"=>"123456", "email"=>"dd@dd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (3.8ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "dd@dd"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (2.5ms)
+  Rendered customers/shared/_links.html.erb (1.2ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (125.8ms)
+Completed 200 OK in 1743ms (Views: 1260.5ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:16:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"im6ULcDNxX11XZ2wZfYMwoiDXSDfNpY9ZzqbeEYebRjYnvEo98KZK8FKrTS0k1nrg9WPUl/cUQSziqzKC4RMsA==", "customer"=>{"last_name"=>"wwww", "first_name"=>"wwww", "read_last_name"=>"www3w3w", "read_first_name"=>"wwwww", "post_code"=>"wwww", "prefecture"=>"wwwww", "city"=>"wwwww", "street"=>"wwww", "phone_number"=>"1234567", "email"=>"dd@dd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (5.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "dd@dd"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (2.8ms)
+  Rendered customers/shared/_links.html.erb (1.4ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (144.1ms)
+Completed 200 OK in 1766ms (Views: 1312.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:23:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/cdeeen/app/controllers/application_controller.rb:8: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/application_controller.rb:8: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:23:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered customers/shared/_links.html.erb (1.1ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (150.6ms)
+Completed 200 OK in 5750ms (Views: 5709.0ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:24:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DdBFn3QgTNAkGxFrfrO7StQbUH9S/35SnCZPjy6qxZJfICCaQy8QhpAMIe+v1u5j302CDdIVuWtIlng9YzDkOg==", "customer"=>{"last_name"=>"aaa", "first_name"=>"aaa", "read_last_name"=>"aaa", "read_first_name"=>"aaa", "post_code"=>"aaa", "prefecture"=>"aaa", "city"=>"aaa", "street"=>"aa", "phone_number"=>"aaaaaaa", "email"=>"aa@aa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (4.7ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "aa@aa"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (5.7ms)
+  Rendered customers/shared/_links.html.erb (3.9ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (124.0ms)
+Completed 200 OK in 1594ms (Views: 1203.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/customers" for 10.0.2.2 at 2019-07-21 07:26:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 07:26:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (2.2ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (122.1ms)
+Completed 200 OK in 4661ms (Views: 4610.6ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:26:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (2.5ms)
+  Rendered customers/shared/_links.html.erb (1.9ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (135.0ms)
+Started POST "/customers/sign_in" for 10.0.2.2 at 2019-07-21 07:26:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Iq2RoyPqOlksNlmWxC9K99rCKh+HBJaKln+Y5NaDhgRwXfSmFOVmD5ghaRIVSh/e0ZT4bQfuUbNCz69WmxmnrA==", "customer"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Iq2RoyPqOlksNlmWxC9K99rCKh+HBJaKln+Y5NaDhgRwXfSmFOVmD5ghaRIVSh/e0ZT4bQfuUbNCz69WmxmnrA==", "customer"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (3.9ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (97.8ms)
+Completed 200 OK in 2010ms (Views: 2007.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1735ms (Views: 1732.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:27:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmITaCjV/EbpLvoOaRYW7ruAjEAlAMIrT/t8CVo1Z+fcknZtH9qgEF05yoq4c0PHsNZeMqXqBRKbS0u7F69GTw==", "customer"=>{"last_name"=>"shimizu", "first_name"=>"daiisuke", "read_last_name"=>"shimizu", "read_first_name"=>"daisuke", "post_code"=>"123456", "prefecture"=>"kanagawa", "city"=>"yokohama", "street"=>"hiyoshi", "phone_number"=>"12345678", "email"=>"qq@qq", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "qq@qq"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (4.5ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "qq@qq"], ["encrypted_password", "$2a$11$fmaaaN.6MGQ30FiJNTC2zu2XlMVoPClKxU8RqP3n.GnqAmh7lo6hi"], ["created_at", "2019-07-21 07:27:22.302916"], ["updated_at", "2019-07-21 07:27:22.302916"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 315ms (ActiveRecord: 6.5ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: customers.last_name: INSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `step'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `block in each'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `loop'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `each'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `to_a'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `block (2 levels) in exec_query'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.3) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:213:in `block in exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:212:in `exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:130:in `exec_insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:162:in `insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:21:in `insert'
+activerecord (5.2.3) lib/active_record/persistence.rb:187:in `_insert_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:734:in `_create_record'
+activerecord (5.2.3) lib/active_record/counter_cache.rb:184:in `_create_record'
+activerecord (5.2.3) lib/active_record/locking/optimistic.rb:70:in `_create_record'
+activerecord (5.2.3) lib/active_record/attribute_methods/dirty.rb:140:in `_create_record'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `block in _create_record'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_create_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `_create_record'
+activerecord (5.2.3) lib/active_record/timestamp.rb:102:in `_create_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:705:in `create_or_update'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `block in create_or_update'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_save_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `create_or_update'
+activerecord (5.2.3) lib/active_record/persistence.rb:275:in `save'
+activerecord (5.2.3) lib/active_record/validations.rb:46:in `save'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block (2 levels) in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:239:in `block in within_new_transaction'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.3) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.3) lib/active_record/suppressor.rb:44:in `save'
+devise (4.6.2) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (3.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:29:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (13.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmITaCjV/EbpLvoOaRYW7ruAjEAlAMIrT/t8CVo1Z+fcknZtH9qgEF05yoq4c0PHsNZeMqXqBRKbS0u7F69GTw==", "customer"=>{"last_name"=>"shimizu", "first_name"=>"daiisuke", "read_last_name"=>"shimizu", "read_first_name"=>"daisuke", "post_code"=>"123456", "prefecture"=>"kanagawa", "city"=>"yokohama", "street"=>"hiyoshi", "phone_number"=>"12345678", "email"=>"qq@qq", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "qq@qq"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (4.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "qq@qq"], ["encrypted_password", "$2a$11$BSRuk5cgHJ.ssW6M3Yj3R.QmiZHfhA8JG5ZUxj6FZTY2S44YAtndG"], ["created_at", "2019-07-21 07:29:45.854706"], ["updated_at", "2019-07-21 07:29:45.854706"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 20.1ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: customers.last_name: INSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `step'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `block in each'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `loop'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `each'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `to_a'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `block (2 levels) in exec_query'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.3) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:213:in `block in exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:212:in `exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:130:in `exec_insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:162:in `insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:21:in `insert'
+activerecord (5.2.3) lib/active_record/persistence.rb:187:in `_insert_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:734:in `_create_record'
+activerecord (5.2.3) lib/active_record/counter_cache.rb:184:in `_create_record'
+activerecord (5.2.3) lib/active_record/locking/optimistic.rb:70:in `_create_record'
+activerecord (5.2.3) lib/active_record/attribute_methods/dirty.rb:140:in `_create_record'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `block in _create_record'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_create_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `_create_record'
+activerecord (5.2.3) lib/active_record/timestamp.rb:102:in `_create_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:705:in `create_or_update'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `block in create_or_update'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_save_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `create_or_update'
+activerecord (5.2.3) lib/active_record/persistence.rb:275:in `save'
+activerecord (5.2.3) lib/active_record/validations.rb:46:in `save'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block (2 levels) in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:239:in `block in within_new_transaction'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.3) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.3) lib/active_record/suppressor.rb:44:in `save'
+devise (4.6.2) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:31:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmITaCjV/EbpLvoOaRYW7ruAjEAlAMIrT/t8CVo1Z+fcknZtH9qgEF05yoq4c0PHsNZeMqXqBRKbS0u7F69GTw==", "customer"=>{"last_name"=>"shimizu", "first_name"=>"daiisuke", "read_last_name"=>"shimizu", "read_first_name"=>"daisuke", "post_code"=>"123456", "prefecture"=>"kanagawa", "city"=>"yokohama", "street"=>"hiyoshi", "phone_number"=>"12345678", "email"=>"qq@qq", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (3.5ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "qq@qq"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (7.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "qq@qq"], ["encrypted_password", "$2a$11$PZe.Pty/mQf1KzhvJ/SHX.8dIOnfP0WWxzZYwIP1ewSjGkmAfpyWq"], ["created_at", "2019-07-21 07:31:21.244176"], ["updated_at", "2019-07-21 07:31:21.244176"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 308ms (ActiveRecord: 30.6ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: customers.last_name: INSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `step'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `block in each'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `loop'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `each'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `to_a'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `block (2 levels) in exec_query'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.3) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:213:in `block in exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:212:in `exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:130:in `exec_insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:162:in `insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:21:in `insert'
+activerecord (5.2.3) lib/active_record/persistence.rb:187:in `_insert_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:734:in `_create_record'
+activerecord (5.2.3) lib/active_record/counter_cache.rb:184:in `_create_record'
+activerecord (5.2.3) lib/active_record/locking/optimistic.rb:70:in `_create_record'
+activerecord (5.2.3) lib/active_record/attribute_methods/dirty.rb:140:in `_create_record'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `block in _create_record'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_create_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `_create_record'
+activerecord (5.2.3) lib/active_record/timestamp.rb:102:in `_create_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:705:in `create_or_update'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `block in create_or_update'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_save_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `create_or_update'
+activerecord (5.2.3) lib/active_record/persistence.rb:275:in `save'
+activerecord (5.2.3) lib/active_record/validations.rb:46:in `save'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block (2 levels) in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:239:in `block in within_new_transaction'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.3) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.3) lib/active_record/suppressor.rb:44:in `save'
+devise (4.6.2) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:32:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmITaCjV/EbpLvoOaRYW7ruAjEAlAMIrT/t8CVo1Z+fcknZtH9qgEF05yoq4c0PHsNZeMqXqBRKbS0u7F69GTw==", "customer"=>{"last_name"=>"shimizu", "first_name"=>"daiisuke", "read_last_name"=>"shimizu", "read_first_name"=>"daisuke", "post_code"=>"123456", "prefecture"=>"kanagawa", "city"=>"yokohama", "street"=>"hiyoshi", "phone_number"=>"12345678", "email"=>"qq@qq", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (4.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "qq@qq"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (5.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "qq@qq"], ["encrypted_password", "$2a$11$ZpN7rPR/0evBS9G1AoaGjOio3ps0kkyM5VXJ6fBZsTdKOmX3Hr3iK"], ["created_at", "2019-07-21 07:32:13.719393"], ["updated_at", "2019-07-21 07:32:13.719393"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 22.5ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: customers.last_name: INSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `step'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `block in each'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `loop'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `each'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `to_a'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `block (2 levels) in exec_query'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.3) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:213:in `block in exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:212:in `exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:130:in `exec_insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:162:in `insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:21:in `insert'
+activerecord (5.2.3) lib/active_record/persistence.rb:187:in `_insert_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:734:in `_create_record'
+activerecord (5.2.3) lib/active_record/counter_cache.rb:184:in `_create_record'
+activerecord (5.2.3) lib/active_record/locking/optimistic.rb:70:in `_create_record'
+activerecord (5.2.3) lib/active_record/attribute_methods/dirty.rb:140:in `_create_record'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `block in _create_record'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_create_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `_create_record'
+activerecord (5.2.3) lib/active_record/timestamp.rb:102:in `_create_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:705:in `create_or_update'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `block in create_or_update'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_save_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `create_or_update'
+activerecord (5.2.3) lib/active_record/persistence.rb:275:in `save'
+activerecord (5.2.3) lib/active_record/validations.rb:46:in `save'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block (2 levels) in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:239:in `block in within_new_transaction'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.3) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.3) lib/active_record/suppressor.rb:44:in `save'
+devise (4.6.2) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:32:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmITaCjV/EbpLvoOaRYW7ruAjEAlAMIrT/t8CVo1Z+fcknZtH9qgEF05yoq4c0PHsNZeMqXqBRKbS0u7F69GTw==", "customer"=>{"last_name"=>"shimizu", "first_name"=>"daiisuke", "read_last_name"=>"shimizu", "read_first_name"=>"daisuke", "post_code"=>"123456", "prefecture"=>"kanagawa", "city"=>"yokohama", "street"=>"hiyoshi", "phone_number"=>"12345678", "email"=>"qq@qq", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (4.5ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "qq@qq"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "qq@qq"], ["encrypted_password", "$2a$11$uEUoKTaaKx0wdrvBACHNautTdUUwGoujqcUg9GpgxNqoo2l.FZ10."], ["created_at", "2019-07-21 07:32:16.167435"], ["updated_at", "2019-07-21 07:32:16.167435"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 5.5ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: customers.last_name: INSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `step'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `block in each'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `loop'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `each'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `to_a'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `block (2 levels) in exec_query'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.3) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:213:in `block in exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:212:in `exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:130:in `exec_insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:162:in `insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:21:in `insert'
+activerecord (5.2.3) lib/active_record/persistence.rb:187:in `_insert_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:734:in `_create_record'
+activerecord (5.2.3) lib/active_record/counter_cache.rb:184:in `_create_record'
+activerecord (5.2.3) lib/active_record/locking/optimistic.rb:70:in `_create_record'
+activerecord (5.2.3) lib/active_record/attribute_methods/dirty.rb:140:in `_create_record'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `block in _create_record'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_create_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `_create_record'
+activerecord (5.2.3) lib/active_record/timestamp.rb:102:in `_create_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:705:in `create_or_update'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `block in create_or_update'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_save_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `create_or_update'
+activerecord (5.2.3) lib/active_record/persistence.rb:275:in `save'
+activerecord (5.2.3) lib/active_record/validations.rb:46:in `save'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block (2 levels) in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:239:in `block in within_new_transaction'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.3) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.3) lib/active_record/suppressor.rb:44:in `save'
+devise (4.6.2) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:32:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:32:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (1.6ms)
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.2ms)
+  Rendered customers/shared/_links.html.erb (3.4ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (330.5ms)
+  Rendered customers/shared/_links.html.erb (0.4ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (755.9ms)
+Completed 200 OK in 4747ms (Views: 4745.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 5040ms (Views: 4957.1ms | ActiveRecord: 16.5ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:33:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ovmJ0W0xZQ6nDVd/CtVbfzSGK2DUnDx1s20SoPckqkHwCezUWj45WBMaZ/vbsA5WP9D5ElR2+0xn3SUSur6L6Q==", "customer"=>{"last_name"=>"qqq", "first_name"=>"qqq", "read_last_name"=>"qqq", "read_first_name"=>"www", "post_code"=>"wwww", "prefecture"=>"wwwww", "city"=>"wwww", "street"=>"wwww", "phone_number"=>"wwwwww", "email"=>"www@wwww", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (11.9ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "www@wwww"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (2.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "www@wwww"], ["encrypted_password", "$2a$11$B35Hk/CS.AruSOoB0y7A0.KBsj/C1802ENoSTqExrC.3pOltkYgSe"], ["created_at", "2019-07-21 07:33:23.325300"], ["updated_at", "2019-07-21 07:33:23.325300"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 14.9ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: customers.last_name: INSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `step'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `block in each'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `loop'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `each'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `to_a'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `block (2 levels) in exec_query'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.3) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:213:in `block in exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:212:in `exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:130:in `exec_insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:162:in `insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:21:in `insert'
+activerecord (5.2.3) lib/active_record/persistence.rb:187:in `_insert_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:734:in `_create_record'
+activerecord (5.2.3) lib/active_record/counter_cache.rb:184:in `_create_record'
+activerecord (5.2.3) lib/active_record/locking/optimistic.rb:70:in `_create_record'
+activerecord (5.2.3) lib/active_record/attribute_methods/dirty.rb:140:in `_create_record'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `block in _create_record'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_create_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `_create_record'
+activerecord (5.2.3) lib/active_record/timestamp.rb:102:in `_create_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:705:in `create_or_update'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `block in create_or_update'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_save_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `create_or_update'
+activerecord (5.2.3) lib/active_record/persistence.rb:275:in `save'
+activerecord (5.2.3) lib/active_record/validations.rb:46:in `save'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block (2 levels) in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:239:in `block in within_new_transaction'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.3) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.3) lib/active_record/suppressor.rb:44:in `save'
+devise (4.6.2) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:34:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (2.4ms)
+  Rendered customers/shared/_links.html.erb (1.4ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (131.1ms)
+Completed 200 OK in 1292ms (Views: 1289.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:35:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uJnIYM+FXkC8fNJsM0OuEKqlCCH/abddDouC1VWMPZHqaa1l+IoCFghr4ujiJvs5ofPaU3+DcGTaO7VnGBYcOQ==", "customer"=>{"last_name"=>"ww", "first_name"=>"ww", "read_last_name"=>"www", "read_first_name"=>"www", "post_code"=>"www", "prefecture"=>"wwww", "city"=>"wwww", "street"=>"wwww", "phone_number"=>"wwwwww", "email"=>"www@ddd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (4.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "www@ddd"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "www@ddd"], ["encrypted_password", "$2a$11$WT8OT5uKDJSl1VVUQZ6/l.74S761Uj4zzlyfCJ08gcxEyyYh1DJW."], ["created_at", "2019-07-21 07:35:38.468024"], ["updated_at", "2019-07-21 07:35:38.468024"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 5.2ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: customers.last_name: INSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `step'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:108:in `block in each'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `loop'
+sqlite3 (1.4.1) lib/sqlite3/statement.rb:107:in `each'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `to_a'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:222:in `block (2 levels) in exec_query'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.3) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.3) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:213:in `block in exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+activerecord (5.2.3) lib/active_record/connection_adapters/sqlite3_adapter.rb:212:in `exec_query'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:130:in `exec_insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:162:in `insert'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:21:in `insert'
+activerecord (5.2.3) lib/active_record/persistence.rb:187:in `_insert_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:734:in `_create_record'
+activerecord (5.2.3) lib/active_record/counter_cache.rb:184:in `_create_record'
+activerecord (5.2.3) lib/active_record/locking/optimistic.rb:70:in `_create_record'
+activerecord (5.2.3) lib/active_record/attribute_methods/dirty.rb:140:in `_create_record'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `block in _create_record'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_create_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:346:in `_create_record'
+activerecord (5.2.3) lib/active_record/timestamp.rb:102:in `_create_record'
+activerecord (5.2.3) lib/active_record/persistence.rb:705:in `create_or_update'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `block in create_or_update'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.3) lib/active_support/callbacks.rb:816:in `_run_save_callbacks'
+activerecord (5.2.3) lib/active_record/callbacks.rb:342:in `create_or_update'
+activerecord (5.2.3) lib/active_record/persistence.rb:275:in `save'
+activerecord (5.2.3) lib/active_record/validations.rb:46:in `save'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block (2 levels) in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:387:in `block in with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `block in transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:239:in `block in within_new_transaction'
+/usr/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:236:in `within_new_transaction'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:267:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:212:in `transaction'
+activerecord (5.2.3) lib/active_record/transactions.rb:385:in `with_transaction_returning_status'
+activerecord (5.2.3) lib/active_record/transactions.rb:310:in `block in save'
+activerecord (5.2.3) lib/active_record/transactions.rb:325:in `rollback_active_record_state!'
+activerecord (5.2.3) lib/active_record/transactions.rb:309:in `save'
+activerecord (5.2.3) lib/active_record/suppressor.rb:44:in `save'
+devise (4.6.2) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2019-07-21 07:53:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/cdeeen/app/controllers/customers_controller.rb:31: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/customers_controller.rb:31: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for 10.0.2.2 at 2019-07-21 07:54:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/cdeeen/app/controllers/application_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting tCONSTANT
+...    added_attrs = [ ::last_name, :first_name, :read_last_nam...
+...                      ^~~~~~~~~
+/vagrant/cdeeen/app/controllers/application_controller.rb:6: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...s = [ ::last_name, :first_name, :read_last_name, :read_first...
+...                              ^):
+  
+app/controllers/application_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting tCONSTANT
+app/controllers/application_controller.rb:6: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/controllers/customers_controller.rb:1:in `<top (required)>'
+Started GET "/" for 10.0.2.2 at 2019-07-21 07:54:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (10.5ms)
+Completed 200 OK in 4359ms (Views: 4269.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:54:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered customers/shared/_links.html.erb (1.3ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (137.5ms)
+Completed 200 OK in 1075ms (Views: 1031.9ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 07:54:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z6ad6+sFN+73D1GzZGG4kJXjpmKr/1YmIFMDGY5fWW8L0yqSg4DI1HawKqWzm4/QFZRvpO82aveLJ0xKpYgeTQ==", "customer"=>{"last_name"=>"aaa", "first_name"=>"aaa", "read_last_name"=>"aaa", "read_first_name"=>"aaa", "post_code"=>"www", "prefecture"=>"www", "city"=>"www", "street"=>"www", "phone_number"=>"wwwww", "email"=>"wwww@ww", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (4.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "wwww@ww"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (11.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "last_name", "read_last_name", "first_name", "read_first_name", "phone_number", "post_code", "prefecture", "city", "street", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "wwww@ww"], ["encrypted_password", "$2a$11$cAu.1wIyUdij9cMTBZYSme0D1qJne9x45VBPsA5NLrnJUD9UpRmmC"], ["last_name", "aaa"], ["read_last_name", "aaa"], ["first_name", "aaa"], ["read_first_name", "aaa"], ["phone_number", "wwwww"], ["post_code", "www"], ["prefecture", "www"], ["city", "www"], ["street", "www"], ["created_at", "2019-07-21 07:54:57.054918"], ["updated_at", "2019-07-21 07:54:57.054918"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 421ms (ActiveRecord: 23.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 07:54:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (3.3ms)
+Completed 200 OK in 972ms (Views: 921.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 07:56:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (13.5ms)
+Completed 200 OK in 4447ms (Views: 4381.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:56:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCustomer Load (5.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 105ms (ActiveRecord: 19.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 07:56:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (4.5ms)
+Completed 200 OK in 1176ms (Views: 1124.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 07:56:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCustomer Load (3.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 07:56:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (4.7ms)
+Completed 200 OK in 1180ms (Views: 1124.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:00:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (60.6ms)
+Completed 500 Internal Server Error in 269ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Unexpected end of file
+  /vagrant/cdeeen/app/views/customers/top.html.slim, Line 6, Column 0
+    
+    ^
+):
+    3: = link_to "ログインへ",new_customer_session_path
+    4: = link_to "新規登録へ",new_customer_registration_path
+    5: 
+    6: = link_to "ログアウト" ,destroy_user_session_path, method: :delete,  
+  
+app/views/customers/top.html.slim:6
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:01:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Unexpected end of file
+  /vagrant/cdeeen/app/views/customers/top.html.slim, Line 6, Column 0
+    
+    ^
+):
+    3: = link_to "ログインへ",new_customer_session_path
+    4: = link_to "新規登録へ",new_customer_registration_path
+    5: 
+    6: = link_to "ログアウト" ,destroy_customer_session_path, method: :delete,  
+  
+app/views/customers/top.html.slim:6
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:02:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (12.9ms)
+Completed 200 OK in 5114ms (Views: 5053.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_out" for 10.0.2.2 at 2019-07-21 08:02:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:5
+Completed 404 Not Found in 75ms (ActiveRecord: 14.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=sign_out):
+  
+app/controllers/customers_controller.rb:5:in `show'
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 08:04:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCustomer Load (3.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 105ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:04:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (3.3ms)
+Completed 200 OK in 1191ms (Views: 1125.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 10.0.2.2 at 2019-07-21 08:04:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/sign_out" for 10.0.2.2 at 2019-07-21 08:06:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:5
+Completed 404 Not Found in 7ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=sign_out):
+  
+app/controllers/customers_controller.rb:5:in `show'
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:06:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (3.6ms)
+Completed 200 OK in 1185ms (Views: 1133.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:06:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (3.4ms)
+Completed 200 OK in 945ms (Views: 893.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/customers/sign_out" for 10.0.2.2 at 2019-07-21 08:06:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nS5qy/J+LvidagUdVf2RRyiPcJmGp+LJ3uobir9pWfHP3g/OxXFyril9NZmEmMRuI9mi6wZNJfAKWiw48vN4WQ=="}
+  [1m[36mCustomer Load (2.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:06:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (3.5ms)
+Completed 200 OK in 1102ms (Views: 1009.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 08:06:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (1.5ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 1046ms (Views: 1036.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 10.0.2.2 at 2019-07-21 08:06:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered customers/shared/_links.html.erb (3.2ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (152.0ms)
+Completed 200 OK in 1558ms (Views: 1556.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 08:06:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yfwGluUukFmDDn4n6aq9Gb0NoWKZSNjG6g+xxpiy1Jtl8q3DtbdGHRLppLW+IaXsUDlblqqRmbuVArwnMIrg1w==", "customer"=>{"last_name"=>"", "first_name"=>"", "read_last_name"=>"", "read_first_name"=>"", "post_code"=>"", "prefecture"=>"", "city"=>"", "street"=>"", "phone_number"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (4.2ms)
+  Rendered customers/shared/_links.html.erb (2.5ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 1389ms (Views: 1108.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 08:06:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bA4O2TSExQLZy+NhuF5hPXm2Fwwn8X1wQiIm3YMWtEX0Q2X0vUaYQBfjb7p3FvnPGlNB6Mbb70v9SCUXFQgOjg==", "customer"=>{"last_name"=>"a", "first_name"=>"", "read_last_name"=>"", "read_first_name"=>"", "post_code"=>"", "prefecture"=>"", "city"=>"", "street"=>"", "phone_number"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (3.0ms)
+  Rendered customers/shared/_links.html.erb (1.0ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (123.1ms)
+Completed 200 OK in 1353ms (Views: 1145.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/customers" for 10.0.2.2 at 2019-07-21 08:07:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8RTfUjLI8rn8p2Mw+136dEmWbVgaLyCko/kUrnSLB69pWbR/uwqv+zKP7+s0FWKGKnM7vPsFsp8ckxdk4pW9ZA==", "customer"=>{"last_name"=>"シミズ", "first_name"=>"ダイスケ", "read_last_name"=>"しみず", "read_first_name"=>"だいすけ", "post_code"=>"123456", "prefecture"=>"kanagawa", "city"=>"yokohama", "street"=>"hiyoshi", "phone_number"=>"12345678", "email"=>"dd@dd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "dd@dd"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (10.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "last_name", "read_last_name", "first_name", "read_first_name", "phone_number", "post_code", "prefecture", "city", "street", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dd@dd"], ["encrypted_password", "$2a$11$Ks6Uj/seBqFOFBsmFUFUVOvMdDB0fidRXQUz/45oPjvabmGQUqFve"], ["last_name", "シミズ"], ["read_last_name", "しみず"], ["first_name", "ダイスケ"], ["read_first_name", "だいすけ"], ["phone_number", "12345678"], ["post_code", "123456"], ["prefecture", "kanagawa"], ["city", "yokohama"], ["street", "hiyoshi"], ["created_at", "2019-07-21 08:07:57.985821"], ["updated_at", "2019-07-21 08:07:57.985821"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 492ms (ActiveRecord: 20.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:07:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (4.6ms)
+Completed 200 OK in 907ms (Views: 863.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/customers/sign_out" for 10.0.2.2 at 2019-07-21 08:08:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wFjtCd8TLPbGK/wz76z/p5eGaab6WXHL7HbcBPlqVXNYFYYkVtFxtAgDcOgg5GdV9GM/Qhtz4/BTHN/Ob3TvuA=="}
+  [1m[36mCustomer Load (2.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:08:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (3.5ms)
+Completed 200 OK in 932ms (Views: 881.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 10.0.2.2 at 2019-07-21 08:08:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (1.1ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (65.2ms)
+Completed 200 OK in 1112ms (Views: 1109.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers/sign_in" for 10.0.2.2 at 2019-07-21 08:08:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CDCeN/om03L6gH4w3LTTcG+vXdvFJU0F8q5RnCmNSBn4xXR9h0WoKc8ZJxpadWtwaSxh9ORuwVP6FzaDLf8jNw==", "customer"=>{"email"=>"dd@dd", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (4.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? ORDER BY "customers"."id" ASC LIMIT ?[0m  [["email", "dd@dd"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 379ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-07-21 08:08:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#top as HTML
+  Rendering customers/top.html.slim within layouts/application
+  Rendered customers/top.html.slim within layouts/application (3.6ms)
+Completed 200 OK in 981ms (Views: 917.4ms | ActiveRecord: 0.0ms)
+
+
