@@ -5,7 +5,15 @@ class Admin::GenresController < ApplicationController
         if @genre.save
             redirect_to admin_item_kinds_path
         else
-            redirect_to admin_item_kinds_path
+            @singers = Singer.all
+            @genres = Genre.all
+            @labels = Label.all
+
+            @singer = Singer.new
+            @label = Label.new
+
+            @genre_error= "新規ジャンルでのエラーです"
+            render ("admin/item_kinds/index")
         end
     end
 

@@ -1,6 +1,10 @@
 .container.item-kinds
   h1 アーティスト、レーベル、ジャンル管理ページ
   .row
+    .col-lg-12
+      = render  "layouts/errors", model: @genre, model_error: @genre_error
+      = render  "layouts/errors", model: @label, model_error: @label_error
+      = render  "layouts/errors", model: @singer, model_error: @singer_error
     .col-lg-4
       | アーティスト新規登録
       br/
@@ -9,6 +13,14 @@
         = form.text_field :name
         br/
         = form.submit
+        br/
+        br/
+      | アーティスト一覧
+      - @singers.each do |singer|
+        br/
+        = singer.name
+        br/
+        = link_to  "#{singer.name}を削除する", admin_singer_path(singer), method: :delete, data: { confirm: "#{singer.name}をアーティスト一覧から削除しますか？"}, class: "btn btn-danger"
     .col-lg-4
       | レーベル新規登録
       br/
@@ -17,6 +29,14 @@
         = form.text_field :name
         br/
         = form.submit
+        br/
+        br/
+      | レーベル一覧
+      - @labels.each do |label|
+        br/
+        = label.name
+        br/
+        = link_to  "#{label.name}を削除する", admin_label_path(label), method: :delete, data: { confirm: "#{label.name}をレーベル一覧から削除しますか？"}, class: "btn btn-danger"
     .col-lg-4
       | ジャンル新規登録
       br/
@@ -25,25 +45,12 @@
         = form.text_field :name
         br/
         = form.submit
-  .row
-    .col-lg-4.singer
-      | アーティスト一覧
-      - @singers.each do |singer|
         br/
-        = singer.name
         br/
-        = link_to  "#{singer.name}を削除する", admin_singer_path(singer), method: :delete, data: { confirm: "#{singer.name}をアーティスト一覧から削除しますか？"}, class: "btn btn-danger"
-    .col-lg-4.label
-      | レーベル一覧
-      - @labels.each do |label|
-        br/
-        = label.name
-        br/
-        = link_to  "#{label.name}を削除する", admin_label_path(label), method: :delete, data: { confirm: "#{label.name}をレーベル一覧から削除しますか？"}, class: "btn btn-danger"
-    .col-lg-4.genre
       | ジャンル一覧
       - @genres.each do |genre|
         br/
         = genre.name
         br/
         = link_to  "#{genre.name}を削除する", admin_genre_path(genre), method: :delete, data: { confirm: "#{genre.name}をジャンル一覧から削除しますか？"}, class: "btn btn-danger"
+  
