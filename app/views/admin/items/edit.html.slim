@@ -44,6 +44,7 @@ br/
       - @item_discs.each do |disc|
         = "ディスク名    "+disc.name
         = "    ディスク番号" + disc.id.to_s
+        br/
         
     .col-lg-6.create-song
       | 曲登録
@@ -59,4 +60,13 @@ br/
           = form.label :disc_id, "disc番号"
           = form.number_field :disc_id
           br/
+          = form.label :number, "曲順"
+          = form.number_field :number
+          br/
           = form.submit class: "btn btn-success"
+        
+        - @item_discs.each do |disc|
+          - disc.songs.each do |song|
+            = "曲名    " + song.name
+            = "    曲番号" + song.number.to_s
+            = "    ディスク番号"+ song.disc_id.to_s
