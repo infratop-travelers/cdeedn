@@ -1,1 +1,17 @@
-= attachment_image_tag @item, :image, :fill, 300, 300
+.container
+  .row
+    .col-lg-3
+      = link_to  "商品編集へ", edit_admin_item_path(params[:id]), class: "btn btn-primary"
+    .col-lg-6
+      = attachment_image_tag @item, :image, :fill, 300, 300
+      br/
+      = @item.name
+      br/
+      = @item.price
+      br/
+      = @item.stock
+      br/
+      = @item.delivery_status
+    .col-lg-3
+      = link_to  "商品一覧へ", admin_items_path, class: "btn btn-success"
+
