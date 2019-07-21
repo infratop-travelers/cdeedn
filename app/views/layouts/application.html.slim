@@ -1,12 +1,32 @@
 html
   head
     title Cdeeen
-    = csrf_meta_tags 
-    = csp_meta_tag 
-    
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' 
-    
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 
   body
-    == yield 
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
+    main.main
+      header.header
+        nav.nav.nav-bar.flex
+	        -if customer_signed_in?
+	          div.logo-container
+		      div.link-container
+		        =link_to "MyPage", customer_path(current_customer), class: "btn btn-primary"
+		        =link_to "Goods", items_path, class: "btn btn-danger"
+	            =link_to "Cart", customer_cart_items_path, class: "btn btn-success"
+	            =link_to "Log out", destroy_customer_session_path, method: :delete, class: "btn btn-warning"
+	        -else
+		      div.logo-container
+		      div.link-container
+		        =link_to "About", "#", class: "btn btn-primary"
+		        =link_to "Goods", items_path, class: "btn btn-danger"
+	            =link_to "Log in", customer_session_path, class: "btn btn-success"
+	            =link_to "Sign up", new_customer_registration_path, class: "btn btn-warning"
+      div.main-container
+        == yield 
+      footer.footer
+        div.footer-container
+          p.footer-text &copy;CDeeen.inc
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
