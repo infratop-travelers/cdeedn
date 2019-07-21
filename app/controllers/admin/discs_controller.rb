@@ -13,7 +13,9 @@ class Admin::DiscsController < ApplicationController
     end
 
     def destroy
-    
+        @disc = Disc.find(params[:id])
+        @disc.delete
+        redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
     end
 
     private

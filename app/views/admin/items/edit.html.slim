@@ -45,6 +45,7 @@ br/
         = "ディスク名    "+disc.name
         = "    ディスク番号" + disc.id.to_s
         span.disc-edit-btn.btn.btn-primary ディスク編集
+        = link_to  "ディスク削除", admin_item_disc_path(@item,disc), data: { confirm: "ディスクを削除しても大丈夫ですか？" }, method: :delete, class: "btn btn-danger"
         .disc-edit 
           = form_with model: disc, url: admin_item_disc_path(@item,disc), method: :put, local: true do |form|
             = form.label :name, "ディスク名"
