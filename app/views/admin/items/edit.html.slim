@@ -4,6 +4,7 @@ br/
 .container
   .row
     .col-lg-12.edit-item
+      = render "/layouts/errors", model: @item
       = form_with model: @item, url: admin_item_path(@item), method: :put, local: true do |form|
         = form.label :singer_id, "アーティスト名"
         = form.select :singer_id, @singers
