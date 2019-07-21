@@ -15,16 +15,15 @@ table
       th メールアドレス
 
   tbody
-    - @customer.each do |cus|
-      tr
-        td = cus.first_name
-        td = cus.last_name
-        td = cus.read_first_name
-        td = cus.read_last_name
-        td = cus.post_code
-        td = cus.prefecture
-        td = cus.phone_number
-        td = cus.email
+    tr
+      td = @customer.first_name
+      td = @customer.last_name
+      td = @customer.read_first_name
+      td = @customer.read_last_name
+      td = @customer.post_code
+      td = @customer.prefecture
+      td = @customer.phone_number
+      td = @customer.email
 
 table
     thead
@@ -49,9 +48,6 @@ table
                 th 総額
                 th 送付先
                 th 状態
-                
-     
-            
-            
+
 
 
