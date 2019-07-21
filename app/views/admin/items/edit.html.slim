@@ -44,6 +44,13 @@ br/
       - @item_discs.each do |disc|
         = "ディスク名    "+disc.name
         = "    ディスク番号" + disc.id.to_s
+        span.disc-edit-btn.btn.btn-primary ディスク編集
+        .disc-edit 
+          = form_with model: disc, url: admin_item_disc_path(@item,disc), method: :put, local: true do |form|
+            = form.label :name, "ディスク名"
+            = form.text_field :name
+            br/
+            = form.submit class: "btn btn-success"
         br/
         
     .col-lg-6.create-song
@@ -53,7 +60,7 @@ br/
         .danger.alert-danger.alert
           | ディスクを追加してください
       - else
-        - form_with model: @song, url: admin_item_songs_path(@item), method: :post, local: true do |form|
+        = form_with model: @song, url: admin_item_songs_path(@item), method: :post, local: true do |form|
           = form.label :name, "曲名"
           = form.text_field :name
           br/
@@ -70,15 +77,20 @@ br/
             = "曲名    " + song.name
             = "    曲番号" + song.number.to_s
             = "    ディスク番号"+ song.disc_id.to_s
+            span.song-edit-btn.btn.btn-primary 曲編集
             br/
-            - form_with model: song, url: admin_item_disc_song_path(song), method: :put, local: true do |form|
-              = form.label :name, "曲名"
-              = form.text_field :name
-              br/
-              = form.label :disc_id, "disc番号"
-              = form.number_field :disc_id
-              br/
-              = form.label :number, "曲順"
-              = form.number_field :number
-              br/
-              = form.submit class: "btn btn-success"
+            .song-edit
+              = form_with model: song, url: admin_item_song_path(@item,song), method: :put, local: true do |form|
+                = form.label :name, "曲名"
+                = form.text_field :name
+                br/
+                = form.label :disc_id, "disc番号"
+                = form.number_field :disc_id
+                br/
+                = form.label :number, "曲順"
+                = form.number_field :number
+                br/
+                = form.submit class: "btn btn-success"
+
+
+
