@@ -4,6 +4,42 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+  </div>
+  <div class="field">
+    <%= f.label :read_last_name %><br />
+    <%= f.text_field :read_last_name, autofocus: true, autocomplete: "read_last_name" %>
+  </div>
+  <div class="field">
+    <%= f.label :read_first_name %><br />
+    <%= f.text_field :read_first_name, autofocus: true, autocomplete: "read_first_name" %>
+  </div>
+  <div class="field">
+    <%= f.label :post_code %><br />
+    <%= f.text_field :post_code, autofocus: true, autocomplete: "post_code" %>
+  </div>
+  <div class="field">
+    <%= f.label :prefecture %><br />
+    <%= f.text_field :prefecture, autofocus: true, autocomplete: "prefecture" %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
+  </div>
+  <div class="field">
+    <%= f.label :street %><br />
+    <%= f.text_field :street, autofocus: true, autocomplete: "street" %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
