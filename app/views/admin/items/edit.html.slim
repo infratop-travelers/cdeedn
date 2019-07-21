@@ -29,6 +29,8 @@ br/
         br/
         br/
         = form.submit class: "btn btn-primary"
+  .row.alert.alert-danger
+    | ディスクは中に曲が入っている状態では消すことができません!
   .row
     .col-lg-6.create-disc
       | ディスク登録
@@ -43,9 +45,10 @@ br/
 
       - @item_discs.each do |disc|
         = "ディスク名    "+disc.name
-        = "    ディスク番号" + disc.id.to_s
+        = "    ディスク固有id" + disc.id.to_s
         span.disc-edit-btn.btn.btn-primary ディスク編集
-        = link_to  "ディスク削除", admin_item_disc_path(@item,disc), data: { confirm: "ディスクを削除しても大丈夫ですか？" }, method: :delete, class: "btn btn-danger"
+        - if disc.songs.empty?
+          = link_to  "ディスク削除", admin_item_disc_path(@item,disc), data: { confirm: "ディスクを削除しても大丈夫ですか？" }, method: :delete, class: "btn btn-danger"
         .disc-edit 
           = form_with model: disc, url: admin_item_disc_path(@item,disc), method: :put, local: true do |form|
             = form.label :name, "ディスク名"
@@ -65,7 +68,7 @@ br/
           = form.label :name, "曲名"
           = form.text_field :name
           br/
-          = form.label :disc_id, "disc番号"
+          = form.label :disc_id, "disc固有id"
           = form.number_field :disc_id
           br/
           = form.label :number, "曲順"
