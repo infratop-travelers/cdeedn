@@ -15,7 +15,13 @@ class Admin::ItemsController < ApplicationController
   end
 
   def edit
+    @singers = pull_down_menu(Singer.all)
+    @genres = pull_down_menu(Genre.all)
+    @labels = pull_down_menu(Label.all)
     @item = Item.find(params[:id])
+    @item_discs = @item.discs.all
+    @disc = Disc.new
+    @song = Song.new
   end
 
   def create

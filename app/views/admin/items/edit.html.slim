@@ -1,2 +1,62 @@
-h1 Admin::Items#edit
-p Find me in app/views/admin/items/edit.html.slim
+h1 商品編集画面
+br/
+= link_to  "戻る", admin_item_path(params[:id]), class: "btn btn-success"
+.container
+  .row
+    .col-lg-12.edit-item
+      = form_with model: @item, url: admin_item_path(@item), method: :put, local: true do |form|
+        = form.label :singer_id, "アーティスト名"
+        = form.select :singer_id, @singers
+        br/
+        = form.label :genre_id, "ジャンル名"
+        = form.select :genre_id, @genres
+        br/
+        = form.label :label_id, "レーベル名"
+        = form.select :label_id, @labels
+        br/
+        = form.label :price, "価格"
+        = form.number_field :price
+        br/
+        = form.label :name, "アルバム名"
+        = form.text_field :name
+        br/
+        = form.label :stock, "想定在庫"
+        = form.number_field :stock
+        br/
+        = form.attachment_field :image
+        br/
+        = attachment_image_tag @item, :image, :fill, 100, 100
+        br/
+        br/
+        = form.submit class: "btn btn-primary"
+  .row
+    .col-lg-6.create-disc
+      | ディスク登録
+      br/
+      = form_with model: @disc, url: admin_item_discs_path(@item), method: :post, local: true do |form|
+        = form.label :name, "ディスク名"
+        = form.text_field :name
+        br/
+        = form.hidden_field :item_id, value: @item.id
+        = form.submit class: "btn btn-success"
+        br/
+
+      - @item_discs.each do |disc|
+        = "ディスク名    "+disc.name
+        = "    ディスク番号" + disc.id.to_s
+        
+    .col-lg-6.create-song
+      | 曲登録
+      br/
+      - if @item_discs.empty?
+        .danger.alert-danger.alert
+          | ディスクを追加してください
+      - else
+        = form_with model: @song, url: admin_item_songs_path(@item), method: :post, local: true do |form|
+          = form.label :name, "曲名"
+          = form.text_field :name
+          br/
+          = form.label :disc_id, "disc番号"
+          = form.number_field :disc_id
+          br/
+          = form.submit class: "btn btn-success"
