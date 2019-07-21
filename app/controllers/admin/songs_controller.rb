@@ -13,7 +13,9 @@ class Admin::SongsController < ApplicationController
     end
 
     def destroy
-    
+        @song = Song.find(params[:id])
+        @song.delete
+        redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
     end
 
     private

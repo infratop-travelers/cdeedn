@@ -45,6 +45,7 @@ br/
         = "ディスク名    "+disc.name
         = "    ディスク番号" + disc.id.to_s
         span.disc-edit-btn.btn.btn-primary ディスク編集
+        = link_to  "ディスク削除", admin_item_disc_path(@item,disc), data: { confirm: "ディスクを削除しても大丈夫ですか？" }, method: :delete, class: "btn btn-danger"
         .disc-edit 
           = form_with model: disc, url: admin_item_disc_path(@item,disc), method: :put, local: true do |form|
             = form.label :name, "ディスク名"
@@ -76,15 +77,16 @@ br/
           - disc.songs.each do |song|
             = "曲名    " + song.name
             = "    曲番号" + song.number.to_s
-            = "    ディスク番号"+ song.disc_id.to_s
+            = "    ディスク固有id"+ song.disc_id.to_s
             span.song-edit-btn.btn.btn-primary 曲編集
+            = link_to  "曲削除", admin_item_song_path(@item,song), data: { confirm: "曲を削除しても大丈夫ですか？" }, method: :delete, class: "btn btn-danger"
             br/
             .song-edit
               = form_with model: song, url: admin_item_song_path(@item,song), method: :put, local: true do |form|
                 = form.label :name, "曲名"
                 = form.text_field :name
                 br/
-                = form.label :disc_id, "disc番号"
+                = form.label :disc_id, "disc固有id"
                 = form.number_field :disc_id
                 br/
                 = form.label :number, "曲順"
