@@ -52,5 +52,14 @@
         br/
         = genre.name
         br/
+        span.btn.btn-success.genre-edit-btn.edit-btn
+          | 編集する
         = link_to  "#{genre.name}を削除する", admin_genre_path(genre), method: :delete, data: { confirm: "#{genre.name}をジャンル一覧から削除しますか？"}, class: "btn btn-danger"
+        br/
+        .genre-edit
+          = form_with model: genre, url: admin_genre_path(genre), method: :put, local: true do |form|
+            = form.label :name, "ジャンル名"
+            = form.text_field :name
+            br/
+            = form.submit class: "btn btn-success"
   

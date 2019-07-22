@@ -19,6 +19,7 @@
 
 editBtn(".song-edit", ".song-edit-btn")
 editBtn(".disc-edit", ".disc-edit-btn")
+editBtn(".genre-edit", ".genre-edit-btn")
 
 function editBtn(editBody,editBodyBtn){
     let hogeEdit = document.querySelectorAll(editBody)

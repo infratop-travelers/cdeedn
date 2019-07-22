@@ -29,7 +29,7 @@ class Admin::GenresController < ApplicationController
             @singer = Singer.new
             @label = Label.new
 
-            @genre_error= "ジャンル: #{@genre.name} でのエラーです"
+            @genre_error= "ジャンル編集sでのエラーです"
             render ("admin/item_kinds/index")
         end
     end
