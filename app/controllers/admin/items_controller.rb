@@ -27,11 +27,13 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      flash[:notice] = "successfully"
       redirect_to admin_item_path(@item)
     else
-      flash[:notice] = "error"
-      redirect_to admin_items_path
+      @singers = pull_down_menu(Singer.all)
+      @genres = pull_down_menu(Genre.all)
+      @labels = pull_down_menu(Label.all)
+      @item_error = "新規商品作成のエラーです"
+      render ("admin/items/new")
     end
   end
 
