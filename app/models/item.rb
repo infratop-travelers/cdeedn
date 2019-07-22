@@ -10,4 +10,13 @@ class Item < ApplicationRecord
     belongs_to :singer
     belongs_to :label
     belongs_to :genre
+
+    validates :singer_id, presence: true
+    validates :genre_id, presence: true
+    validates :label_id, presence: true
+    validates :price, presence: true
+    validates :stock, presence: true
+    validates :name, presence: true
+    validates :image_id, presence: true
+    validates :delivery_status, presence: true
 end

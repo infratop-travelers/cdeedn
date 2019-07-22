@@ -2,7 +2,9 @@
   #error_explanation.alert.alert-danger
     ul
       li
-        h4 error
+        h2
+          strong
+            = model_error
       - model.errors.full_messages.each do |message|
         li
           = message

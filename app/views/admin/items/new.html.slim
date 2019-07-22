@@ -2,29 +2,31 @@ h1 新規商品登録ページ
 = link_to  "商品一覧へ", admin_items_path, class: "btn btn-success"
 .container
   .row
-    = form_with model: @item, url: admin_items_path, method: :post, local: true do |form|
-      = form.label :singer_id, "アーティスト名"
-      = form.select :singer_id, @singers
-      br/
-      = form.label :genre_id, "ジャンル名"
-      = form.select :genre_id, @genres
-      br/
-      = form.label :label_id, "レーベル名"
-      = form.select :label_id, @labels
-      br/
-      = form.label :price, "価格"
-      = form.number_field :price
-      br/
-      = form.label :name, "アルバム名"
-      = form.text_field :name
-      br/
-      = form.label :stock, "想定在庫"
-      = form.number_field :stock
-      br/
-      = form.attachment_field :image
-      br/
-      = attachment_image_tag @item, :image, :fill, 100, 100
-      br/
-      = form.hidden_field :delivery_status, value: :undispatched
-      br/
-      = form.submit class: "btn btn-primary"
+    .col-lg-12
+      = render "layouts/errors", model: @item, model_error: @item_error
+      = form_with model: @item, url: admin_items_path, method: :post, local: true do |form|
+        = form.label :singer_id, "アーティスト名"
+        = form.select :singer_id, @singers
+        br/
+        = form.label :genre_id, "ジャンル名"
+        = form.select :genre_id, @genres
+        br/
+        = form.label :label_id, "レーベル名"
+        = form.select :label_id, @labels
+        br/
+        = form.label :price, "価格"
+        = form.number_field :price
+        br/
+        = form.label :name, "アルバム名"
+        = form.text_field :name
+        br/
+        = form.label :stock, "想定在庫"
+        = form.number_field :stock
+        br/
+        = form.attachment_field :image
+        br/
+        = attachment_image_tag @item, :image, :fill, 100, 100
+        br/
+        = form.hidden_field :delivery_status, value: :undispatched
+        br/
+        = form.submit class: "btn btn-primary"

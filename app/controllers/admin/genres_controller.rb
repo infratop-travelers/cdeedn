@@ -5,7 +5,32 @@ class Admin::GenresController < ApplicationController
         if @genre.save
             redirect_to admin_item_kinds_path
         else
+            @singers = Singer.all
+            @genres = Genre.all
+            @labels = Label.all
+
+            @singer = Singer.new
+            @label = Label.new
+
+            @genre_error= "新規ジャンル作成でのエラーです"
+            render ("admin/item_kinds/index")
+        end
+    end
+
+    def update
+        @genre = Genre.find(params[:id])
+        if @genre.update(genre_params)
             redirect_to admin_item_kinds_path
+        else
+            @singers = Singer.all
+            @genres = Genre.all
+            @labels = Label.all
+
+            @singer = Singer.new
+            @label = Label.new
+
+            @genre_error= "ジャンル編集でのエラーです"
+            render ("admin/item_kinds/index")
         end
     end
 
