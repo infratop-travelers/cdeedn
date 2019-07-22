@@ -18,5 +18,4 @@ class Item < ApplicationRecord
     validates :stock, presence: true
     validates :name, presence: true
     validates :image, presence: true
-    validates :delivery_status, presence: true
 end

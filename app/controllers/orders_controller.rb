@@ -1,10 +1,20 @@
 class OrdersController < ApplicationController
     def new
         @cart_items = current_customer.cart_items.all
+        @order_error = false
     end
 
     def create
         # もしも商品の在庫がなければredirect
+        current_customer.cart_items.each do |cart|
+            if cart.count > cart.item.stock
+                @cart_items = current_customer.cart_items.all
+                @order_error = "購入分の在庫がありません"
+                render ("orders/new")
+                return
+            end
+        end
+
         # orderレコードを作る
         @order = Order.new
         @order.customer_id = current_customer.id
@@ -27,8 +37,13 @@ class OrdersController < ApplicationController
             @order_item.order_id = @order.id
             @order_item.save
 
+            # 在庫から購入した分だけ引く
+            item_stock = Item.find(cart.item_id).stock - cart.count
+            Item.find(cart.item_id).update(stock: item_stock)
+
             # カートから商品を削除する
             cart.delete
+            
         end
 
         redirect_to customer_path(current_customer)
