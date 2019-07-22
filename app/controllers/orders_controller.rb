@@ -52,4 +52,8 @@ class OrdersController < ApplicationController
     def show
         @orders = current_customer.orders.all
     end
+
+    def index
+        @orders = current_customer.orders.all
+    end
 end
