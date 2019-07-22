@@ -4,7 +4,32 @@ class Admin::LabelsController < ApplicationController
         if @label.save
             redirect_to admin_item_kinds_path
         else
+            @singers = Singer.all
+            @genres = Genre.all
+            @labels = Label.all
+
+            @singer = Singer.new
+            @genre = Genre.new
+
+            @label_error= "新規レーベル作成でのエラーです"
+            render ("admin/item_kinds/index")
+        end
+    end
+
+    def update
+        @label = Label.find(params[:id])
+        if @label.update(label_params)
             redirect_to admin_item_kinds_path
+        else
+            @singers = Singer.all
+            @genres = Genre.all
+            @labels = Label.all
+
+            @singer = Singer.new
+            @genre = Genre.new
+
+            @label_error= "レーベル編集でのエラーです"
+            render ("admin/item_kinds/index")
         end
     end
 

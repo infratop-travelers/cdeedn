@@ -20,7 +20,15 @@
         br/
         = singer.name
         br/
+        span.btn.btn-success.singer-edit-btn 編集する
         = link_to  "#{singer.name}を削除する", admin_singer_path(singer), method: :delete, data: { confirm: "#{singer.name}をアーティスト一覧から削除しますか？"}, class: "btn btn-danger"
+        br/
+        .singer-edit.edit-form
+          = form_with model: singer, url: admin_singer_path(singer), method: :put, local: true do |form|
+            = form.label :name, "アーティスト名"
+            = form.text_field :name
+            br/
+            = form.submit class: "btn btn-success"
     .col-lg-4
       | レーベル新規登録
       br/
@@ -36,7 +44,15 @@
         br/
         = label.name
         br/
+        span.btn.btn-success.label-edit-btn 編集する
         = link_to  "#{label.name}を削除する", admin_label_path(label), method: :delete, data: { confirm: "#{label.name}をレーベル一覧から削除しますか？"}, class: "btn btn-danger"
+        br/
+        .label-edit.edit-form
+          = form_with model: label, url: admin_label_path(label), method: :put, local: true do |form|
+            = form.label :name, "レーベル名"
+            = form.text_field :name
+            br/
+            = form.submit class: "btn btn-success"
     .col-lg-4
       | ジャンル新規登録
       br/
@@ -52,11 +68,11 @@
         br/
         = genre.name
         br/
-        span.btn.btn-success.genre-edit-btn.edit-btn
+        span.btn.btn-success.genre-edit-btn
           | 編集する
         = link_to  "#{genre.name}を削除する", admin_genre_path(genre), method: :delete, data: { confirm: "#{genre.name}をジャンル一覧から削除しますか？"}, class: "btn btn-danger"
         br/
-        .genre-edit
+        .genre-edit.edit-form
           = form_with model: genre, url: admin_genre_path(genre), method: :put, local: true do |form|
             = form.label :name, "ジャンル名"
             = form.text_field :name
