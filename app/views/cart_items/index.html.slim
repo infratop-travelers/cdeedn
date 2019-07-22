@@ -4,10 +4,11 @@
       = link_to  "商品一覧画面へ", items_path, class: "btn btn-primary"
     .col-md-6
     .col-md-3
-      a.btn.btn-success href="#" 購入画面へ
+      = link_to "購入画面へ", new_customer_order_path(current_customer.id), class: "btn btn-success"
 
 - @cart_items.each do |cart_item|
   = cart_item.item.name
+  = attachment_image_tag cart_item.item, :image, :fill, 50, 50
   = cart_item.count
   = link_to  "カートから削除する", customer_cart_item_path(current_customer, cart_item), method: :delete, data: { confirm: "カートから削除しますか？"}
   br/
