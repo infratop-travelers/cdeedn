@@ -60,6 +60,7 @@ br/
         br/
         
     .col-lg-6.create-song
+      = render "/layouts/errors", model: @song, model_error: @song_error
       | 曲登録
       br/
       - if @item_discs.empty?
