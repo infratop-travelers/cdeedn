@@ -1,0 +1,8 @@
+- @orders.each do |order|
+  = order.address
+  br/
+  = order.delivery_status
+  br/
+  - order.order_items.each do |order_item|
+    = order_item.item.name
+    = attachment_image_tag order_item.item, :image

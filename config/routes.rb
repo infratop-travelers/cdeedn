@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   resources :customers do
     resources :cart_items, only: [:index, :create, :destroy]
-    get 'cart_items/confirm'
     resources :addresses, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
+    resources :orders
   end
   
   resources :items, only: [:index, :show]

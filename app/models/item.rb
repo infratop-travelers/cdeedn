@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-    enum delivery_status: [ :undispatched, :sent, :delivered ]
+    
 
     attachment :image
 
@@ -17,6 +17,5 @@ class Item < ApplicationRecord
     validates :price, presence: true
     validates :stock, presence: true
     validates :name, presence: true
-    validates :image_id, presence: true
-    validates :delivery_status, presence: true
+    validates :image, presence: true
 end

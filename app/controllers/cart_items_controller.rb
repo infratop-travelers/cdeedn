@@ -1,6 +1,5 @@
 class CartItemsController < ApplicationController
   def index
-
     @cart_items = current_customer.cart_items.all
   end
 
@@ -23,8 +22,6 @@ class CartItemsController < ApplicationController
     redirect_to customer_cart_items_path(current_customer)
   end
 
-  def confirm
-  end
 
   private
     def cart_params
