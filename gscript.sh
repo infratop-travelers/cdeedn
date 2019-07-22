@@ -7,6 +7,7 @@ printf "\e[32m最新の物を取ってきてマスターにマージしたい場
 read master
 if [ "$master" == "0" -o "$master" == "2" ]
 then
+    git checkout master
     git fetch
     git merge origin/master
     printf "\e[32mマージしました。ブランチを切るのを忘れないで下さい\e[m"
