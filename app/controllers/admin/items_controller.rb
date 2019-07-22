@@ -41,11 +41,16 @@ class Admin::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.update(item_params)
     if @item.save
-      flash[:notice] = "successfully"
-      redirect_to admin_item_path(@item)
-    else
-      flash[:notice] = "error"
       redirect_to edit_admin_item_path(@item)
+    else
+      @singers = pull_down_menu(Singer.all)
+      @genres = pull_down_menu(Genre.all)
+      @labels = pull_down_menu(Label.all)
+      @item_discs = @item.discs.all
+      @disc = Disc.new
+      @song = Song.new
+      @item_error = "商品編集のエラーです"
+      render "admin/items/edit"
     end
   end
 
