@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
       end
       return menu_array
     end
+    def after_sign_in_path_for(resource)
+      flash[:notice] = "Signed in successfully."
+      items_path
+    end
+    def after_sign_up_path_for(resource)
+      flash[:notice] = "Welcome! You have signed up successfully."
+      items_path
+    end
     
     protected
     def configure_permitted_parameters
