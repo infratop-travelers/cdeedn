@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_075610) do
     t.integer "label_id", null: false
     t.integer "genre_id", null: false
     t.integer "stock", null: false
+    t.boolean "ready", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

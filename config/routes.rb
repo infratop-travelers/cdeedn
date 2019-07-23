@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :discs, only: [:create, :update, :destroy]
       resources :songs, only: [:create, :update, :destroy]
     end
+    resources :orders, only: [:index, :update, :show]
     resources :item_kinds, only: [:index]
     resources :singers, only: [:create, :update, :destroy]
     resources :genres, only: [:create, :update, :destroy]

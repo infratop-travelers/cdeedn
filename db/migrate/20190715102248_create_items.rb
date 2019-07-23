@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :label_id, null:false
       t.integer :genre_id, null:false
       t.integer :stock, null:false
-      t.integer :delivery_status, null:false
+      t.boolean :ready, default: false
       t.timestamps
     end
   end
