@@ -1,3 +1,29 @@
 // Place all the styles related to the admin/home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-home{
+    background-color: darkgray;
+}
+.admin-home-btn {
+    height: 120px;
+    width: 300px;
+    margin: 10 10px;
+    line-height: 100px;
+}
+.admin-home-btn-box{
+    margin: 0 auto;
+}
+
+.to-users {
+    background-color: lightpink;
+}
+.to-items {
+    background-color: aliceblue;
+}
+.to-item-kinds {
+    background-color: palegoldenrod;
+}
+.to-orders {
+    background-color: palegreen;
+}
