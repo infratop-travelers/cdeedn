@@ -1,9 +1,32 @@
 = link_to  "戻る", customer_cart_items_path, class: "btn btn-info"
-= link_to  "購入する", customer_orders_path(current_customer), method: :post, class: "btn btn-success"
 br/
 - if @order_error
   .alert.alert-danger
     = @order_error
 - @cart_items.each do |cart|
   = attachment_image_tag cart.item, :image, :fill, 50,50
+
+= form_with url: customer_orders_path(current_customer), method: :post do |form|
+  = form.label :address, "配送先住所選択"
   br/
+  = current_customer.prefecture+current_customer.city+current_customer.street
+  = form.radio_button :address, current_customer.prefecture+current_customer.city+current_customer.street, checked: true
+  - current_customer.addresses.each do |address|
+    = current_customer.prefecture+current_customer.city+current_customer.street
+    = form.radio_button :address, address.prefecture+address.city+address+street
+  br/
+  = form.label :payment, "支払い方法選択"
+    br/
+    | クレジットカード
+    = form.radio_button :payment, "クレジットカード", checked: true
+    br/
+    | 銀行振込
+    = form.radio_button :payment, "銀行振込"
+    br/
+    = form.radio_button :payment, "代引き"
+    | 着払い
+    br/
+    = "合計金額　#{@sum}円"
+    = form.submit "購入する", class: "btn btn-success", data: { confirm: "購入します"}
+
+    br
