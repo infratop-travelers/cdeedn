@@ -1,0 +1,26 @@
+.container
+  .row
+    .col-lg-3
+      h2 商品
+      - @items.each do |item|
+        br/
+        = link_to  "#{item.name}", item_path(item)
+        br/
+    .col-lg-3
+      h2 歌手
+      - @singers.each do |singer|
+        br
+        = singer.name
+        br/
+    .col-lg-3
+      h2 レーベル
+      - @labels.each do |label|
+        br/
+        = label.name
+        br/
+    .col-lg-3
+      h2 ジャンル
+      - @genres.each do |genre|
+        br/
+        = genre.name
+        br/

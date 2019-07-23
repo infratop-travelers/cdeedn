@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show] do
     resource :favorite, only: [:create, :destroy]
   end
+  resources :searches, only: [:index]
+  post "searches/" => "searches#search", as: "search"
 
   namespace :admin do
     resources :items do
