@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @cart_item = @item.cart_item.new
+    @exist = @item.favorites.where(customer_id: current_customer.id).exists?
   end
 
   private

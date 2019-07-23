@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   resources :customers do
     resources :cart_items, only: [:index, :create, :destroy]
     resources :addresses, only: [:create, :destroy]
-    resource :favorites, only: [:create, :destroy]
     resources :orders
   end
   
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show] do
+    resource :favorite, only: [:create, :destroy]
+  end
 
   namespace :admin do
     resources :items do
