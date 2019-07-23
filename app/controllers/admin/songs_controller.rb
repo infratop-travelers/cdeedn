@@ -11,6 +11,7 @@ class Admin::SongsController < ApplicationController
         @item = Item.find(params[:item_id])
         @item_discs = @item.discs.all
         @disc = Disc.new
+        @discs = pull_down_menu(@item.discs.all)
 
         @song_error = "新規曲作成でのエラーです"
         render "admin/items/edit"
@@ -28,6 +29,7 @@ class Admin::SongsController < ApplicationController
             @item = Item.find(params[:item_id])
             @item_discs = @item.discs.all
             @disc = Disc.new
+            @discs = pull_down_menu(@item.discs.all)
 
             @song_error = "曲編集でのエラーです"
             render "admin/items/edit"

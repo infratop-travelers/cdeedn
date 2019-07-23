@@ -10,6 +10,7 @@ class Admin::DiscsController < ApplicationController
             @labels = pull_down_menu(Label.all)
             @item = Item.find(params[:item_id])
             @item_discs = @item.discs.all
+            @discs = pull_down_menu(@item.discs.all)
             @song = Song.new
             @disc_error = "新規ディスクでのエラーです"
             render("admin/items/edit")
@@ -26,8 +27,9 @@ class Admin::DiscsController < ApplicationController
             @labels = pull_down_menu(Label.all)
             @item = Item.find(params[:item_id])
             @item_discs = @item.discs.all
+            @discs = pull_down_menu(@item.discs.all)
             @song = Song.new
-            @disc_error = "ディスク固有id  #{@disc.id}のディスクでのエラーです"
+            @disc_error = "ディスク名  #{@disc.name}のディスクでのエラーです"
             render("admin/items/edit")
         end
     end
