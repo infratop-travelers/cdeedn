@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
      end
   end
 
-  def top
+  def about
   end
   private
     def customer_params
