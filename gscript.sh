@@ -12,10 +12,10 @@ then
 fi
 if [ "$master" == "1" -o "$master" == "2" ]
 then
-    printf "\e[32missue番号を入力してください\n\e[m"
+    printf "\e[32mブランチ名を入力してください\n\e[m"
     read issue
     git checkout -b $issue
-    printf "\e[32mブランチを切りました。\n\e[m"
+    printf "\e[31m $issue \e[m \e[32mブランチを切りました。\n\e[m"
 fi
 
 branch=$(git symbolic-ref --short HEAD)
