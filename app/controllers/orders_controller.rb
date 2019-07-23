@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
     def new
         @cart_items = current_customer.cart_items.all
         @order_error = false
+        @sum=0
+        current_customer.cart_items.each do |cart|
+            @sum += cart.item.price
+        end
     end
 
     def create
@@ -24,8 +28,8 @@ class OrdersController < ApplicationController
             @order.sum += cart.item.price
         end
         @order.postage = 500
-        @order.address = current_customer.prefecture + current_customer.city + current_customer.street
-        @order.payment = "unko"
+        @order.address = params[:address]
+        @order.payment = params[:payment]
         @order.save
 
         # order_itemレコードを作る
