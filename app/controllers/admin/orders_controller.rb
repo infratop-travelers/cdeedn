@@ -12,9 +12,9 @@ class Admin::OrdersController < ApplicationController
 
     def update
         @order = Order.find(params[:id])
-        if @order.delivery_status == 0
+        if @order.delivery_status == "undispatched"
             @order.update(delivery_status: 1)
-        else
+        elsif @order.delivery_status == "sent"
             @order.update(delivery_status: 2)
         end
         redirect_to admin_orders_path
