@@ -47,7 +47,6 @@ br/
 
       - @item_discs.each do |disc|
         = "ディスク名    "+disc.name
-        = "    ディスク固有id" + disc.id.to_s
         span.disc-edit-btn.btn.btn-primary ディスク編集
         - if disc.songs.empty?
           = link_to  "ディスク削除", admin_item_disc_path(@item,disc), data: { confirm: "ディスクを削除しても大丈夫ですか？" }, method: :delete, class: "btn btn-danger"
@@ -71,8 +70,8 @@ br/
           = form.label :name, "曲名"
           = form.text_field :name
           br/
-          = form.label :disc_id, "disc固有id"
-          = form.number_field :disc_id
+          = form.label :disc_id, "ディスク名"
+          = form.select :disc_id, @discs
           br/
           = form.label :number, "曲順"
           = form.number_field :number
@@ -83,7 +82,7 @@ br/
           - disc.songs.each do |song|
             = "曲名    " + song.name
             = "    曲番号" + song.number.to_s
-            = "    ディスク固有id"+ song.disc_id.to_s
+            = "    ディスク名"+ song.disc.name
             span.song-edit-btn.btn.btn-primary 曲編集
             = link_to  "曲削除", admin_item_song_path(@item,song), data: { confirm: "曲を削除しても大丈夫ですか？" }, method: :delete, class: "btn btn-danger"
             br/
