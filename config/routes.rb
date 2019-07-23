@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'customers#top'
+  root to: 'items#index'
+  get "customers/about" => "customers#about"
   devise_for :admins
   devise_for :customers
 
