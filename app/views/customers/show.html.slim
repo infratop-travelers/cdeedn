@@ -1,8 +1,4 @@
-h1 Customers#show
-
-h2 ユーザー情報
-
-table
+table.table
   thead
     tr
       th 姓
@@ -13,7 +9,6 @@ table
       th 住所
       th 電話番号
       th メールアドレス
-
   tbody
     tr
       td = @customer.first_name
@@ -24,22 +19,16 @@ table
       td = @customer.prefecture
       td = @customer.phone_number
       td = @customer.email
-
-table
-    thead
-        tr
-         th あなたがいいねした曲
-    tbody
-       - @customer.favorites.each do |fav|
-        tr
-            td = fav.item_id
-
-= link_to "退会する",customer_registration_path,method: :delete 
-
-
-
+  = link_to "退会する",customer_registration_path,method: :delete, class: "btn btn-warning"
+  div.modal-btn.btn.btn-success
+    p あなたがいいねした曲
+div.modal-container
+  div.modal-wrapper
+  - @customer.favorites.each do |fav|
+    div.modal-items
+      = fav.item
 - @customer.orders.each do |order|
-.classCarts 
+  .classCarts
     table
         thead
             tr
@@ -48,6 +37,9 @@ table
                 th 総額
                 th 送付先
                 th 状態
+div.modal-overlay
+
+
 
 
 

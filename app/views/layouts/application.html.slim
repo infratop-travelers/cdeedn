@@ -24,9 +24,9 @@ html
 		        =link_to "Goods", items_path, class: "btn btn-danger nav-btn"
 	            =link_to "Log in", customer_session_path, class: "btn btn-success nav-btn"
 	            =link_to "Sign up", new_customer_registration_path, class: "btn btn-warning nav-btn"
-      div.main-container
-        == yield 
-      footer.footer
-        div.footer-container
-          p.footer-text &copy;CDeeen.inc
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+        div.main-container
+          == yield 
+        footer.footer
+          div.footer-container
+            p.footer-text &copy;CDeeen.inc
+      = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
