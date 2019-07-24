@@ -2,7 +2,10 @@ h1 Items#show
 div.btn-container
  =link_to "←　一覧ページに戻る", items_path, class: "btn btn-info", data: {"turbolinks" => false}
 
- / カートに入れるボタン挿入
+- if @item.stock == 0
+  .alert.alert-danger
+    h1 売り切れです！！！
+
 div.item-container.flex
   / 画面左側
   div.side-bar

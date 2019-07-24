@@ -29,7 +29,7 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to admin_item_path(@item)
+      redirect_to edit_admin_item_path(@item)
     else
       @singers = pull_down_menu(Singer.all)
       @genres = pull_down_menu(Genre.all)
