@@ -1,28 +1,41 @@
 div.table-container
-  table
-    thead
-      tr
-        th 姓
-        th 名
-        th セイ
-        th メイ
-        th 郵便番号
-        th 住所
-        th 電話番号
-        th メールアドレス
-    tbody
-      tr
-        td = @customer.first_name
-        td = @customer.last_name
-        td = @customer.read_first_name
-        td = @customer.read_last_name
-        td = @customer.post_code
-        td = @customer.prefecture
-        td = @customer.phone_number
-        td = @customer.email
-  = link_to "退会する",customer_resigned_customer_path(current_customer), method: :put, data: { confirm: "退会するとユーザーを復元することはできません。大丈夫ですか？"}, class: "btn btn-warning", data: {"turbolinks" => false}
-  div.modal-btn.btn.btn-success
-    p あなたがいいねした曲
+  div.customer-items
+    p
+     | 姓:
+     = @customer.first_name
+  div.customer-items
+    p
+     |名:
+     = @customer.last_name
+  div.customer-items
+    p
+     |セイ:
+     = @customer.read_first_name
+  div.customer-items
+    p
+     | メイ:
+     = @customer.read_last_name
+  div.customer-items
+    p
+     | 郵便番号:
+     = @customer.post_code
+  div.customer-items
+    p
+     | 住所:
+     = @customer.prefecture
+  div.customer-items
+    p
+     | 電話番号:
+     = @customer.phone_number
+  div.customer-items
+    p
+     | メールアドレス:
+     = @customer.email
+  div.customer-btn-container
+    = link_to "編集画面", edit_customer_path(current_customer) , class: "btn btn-primary"
+    = link_to "退会する",customer_resigned_customer_path(current_customer), method: :put, data: { confirm: "退会するとユーザーを復元することはできません。大丈夫ですか？", turbolinks: false}, class: "btn btn-warning"
+    div.modal-btn.btn.btn-success
+      p あなたがいいねした曲
 h4.history-text 購入履歴
 div.history
   - @customer.orders.each do |order|
