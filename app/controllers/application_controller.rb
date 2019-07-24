@@ -30,6 +30,10 @@ class ApplicationController < ActionController::Base
         new_admin_session_path
       end
     end
+
+    def signed_customer_redirect
+      redirect_to logout_path if current_customer && current_customer.resigned = true
+    end
     
     protected
     def configure_permitted_parameters

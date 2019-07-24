@@ -1,11 +1,9 @@
 class CustomersController < ApplicationController
   before_action :authenticate_customer!
   skip_before_action :authenticate_customer!, only: [:about]
+  before_action :signed_customer_redirect
   def show
     @customer = Customer.find(params[:id])
-  end
-
-  def destroy
   end
 
   def edit

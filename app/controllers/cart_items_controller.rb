@@ -1,5 +1,6 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_customer!
+  before_action :signed_customer_redirect
 
   def index
     @cart_items = current_customer.cart_items.all

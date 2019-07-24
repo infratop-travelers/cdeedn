@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
     before_action :authenticate_customer!
+    before_action :signed_customer_redirect
     def new
         @address = Address.new
         @cart_items = current_customer.cart_items.all
