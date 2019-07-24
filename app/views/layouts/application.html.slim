@@ -12,26 +12,29 @@ html
         nav.nav.nav-bar.flex
 	        -if customer_signed_in?
 	          div.logo-container
-		      div.link-container
-		        =link_to "MyPage", customer_path(current_customer), class: "btn btn-primary nav-btn", data: {"turbolinks" => false}
-		        =link_to "Goods", items_path, class: "btn btn-danger nav-btn"
-	            =link_to "Cart", customer_cart_items_path(current_customer), class: "btn btn-success nav-btn", data: {"turbolinks" => false}
-	            =link_to "Log out", destroy_customer_session_path, method: :delete, class: "btn btn-warning nav-btn", data: {"turbolinks" => false}
+  		      div.link-container
+  		        =link_to "MyPage", customer_path(current_customer), class: "btn btn-primary nav-btn", data: {"turbolinks" => false}
+  		        =link_to "Goods", items_path, class: "btn btn-danger nav-btn"
+  	            =link_to "Cart", customer_cart_items_path(current_customer), class: "btn btn-success nav-btn", data: {"turbolinks" => false}
+  	            =link_to "Log out", destroy_customer_session_path, method: :delete, class: "btn btn-warning nav-btn", data: {"turbolinks" => false}
+                = form_with url: search_path, method: :post, class: "search-box",local: true do
+                  = text_field_tag :search
+                  = submit_tag "Search"
 	        -else
-		      div.logo-container
-		      div.link-container
-		        =link_to "About", customers_about_path, class: "btn btn-primary nav-btn", data: {"turbolinks" => false}
-		        =link_to "Goods", items_path, class: "btn btn-danger nav-btn"
+  		      div.logo-container
+  		      div.link-container
+  		        =link_to "About", customers_about_path, class: "btn btn-primary nav-btn", data: {"turbolinks" => false}
+  		        =link_to "Goods", items_path, class: "btn btn-danger nav-btn"
 
-	            =link_to "Log in", customer_session_path, class: "btn btn-success nav-btn"
-	            =link_to "Sign up", new_customer_registration_path, class: "btn btn-warning nav-btn"
+  	            =link_to "Log in", customer_session_path, class: "btn btn-success nav-btn"
+  	            =link_to "Sign up", new_customer_registration_path, class: "btn btn-warning nav-btn"
+                = form_with url: search_path, method: :post, class: "search-box", local: true do
+                  = text_field_tag :search
+                  = submit_tag "Search"
       div.main-container
         == yield 
-    = form_with url: search_path, method: :post, local: true do
-          = text_field_tag :search
-          = submit_tag "Search"
-    footer.footer
-      div.footer-container
-        p.footer-text &copy;CDeeen.inc
+      footer.footer
+        div.footer-container
+          p.footer-text &copy;CDeeen.inc
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 

@@ -3,12 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color: #c0c0c0;
 
+.customer-items{
+	width: 40%;
+	margin: 10px auto;
+}
+
 
 .table-container{
 	margin: 60 auto;
     width: 80%;
     min-height: 80%;
     border: 1px solid $color;
+}
+
+.customer-btn-container{
+	width: 70%;
+	margin: 20px auto;
+	display: flex;
+	justify-content: space-around;
+	& > .btn{
+		height: 40px;
+	}
 }
 
 .modal-overlay{
