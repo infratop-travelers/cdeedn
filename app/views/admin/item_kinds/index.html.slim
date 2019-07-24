@@ -46,7 +46,7 @@
         = label.name
         br/
         span.btn.btn-success.label-edit-btn 編集する
-        = link_to  "削除する", admin_label_path(label), method: :delete, data: { confirm: "#{label.name}をレーベル一覧から削除しますか？"}, class: "btn btn-danger"
+        = link_to  "削除する", admin_label_path(label), method: :delete, data: { confirm: "#{label.name}をレーベル一覧から削除しますか？"}, class: "btn btn-danger", data: {"turbolinks" => false}
         br/
         .label-edit.edit-form
           = form_with model: label, url: admin_label_path(label), method: :put, local: true do |form|
