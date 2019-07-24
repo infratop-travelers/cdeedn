@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :customers
 
-  resources :customers do
+  resources :customers, only: [:show, :destroy, :edit, :update] do
     resources :cart_items, only: [:index, :create, :destroy]
     resources :addresses, only: [:create, :destroy]
     resources :orders
