@@ -1,4 +1,5 @@
 class Admin::ResignedCustomersController < ApplicationController
+    before_action :authenticate_admin!
     def create
         
     end

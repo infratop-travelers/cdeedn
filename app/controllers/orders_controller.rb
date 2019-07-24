@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+    before_action :authenticate_customer!
     def new
         @address = Address.new
         @cart_items = current_customer.cart_items.all
