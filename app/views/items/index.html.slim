@@ -3,7 +3,7 @@ div.announce
    - @items.each do |item|
       = item.name
       = attachment_image_tag item, :image, :fill, 50, 50
-      = link_to  "詳細ページへ", item_path(item), class: "btn btn-info"
+      = link_to  "詳細ページへ", item_path(item), class: "btn btn-info", data: {"turbolinks" => false}
       / =item.singer.name
       / =item.favorites.count
       =item.price

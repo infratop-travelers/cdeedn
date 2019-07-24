@@ -1,42 +1,53 @@
-table.table
-  thead
-    tr
-      th 姓
-      th 名
-      th セイ
-      th メイ
-      th 郵便番号
-      th 住所
-      th 電話番号
-      th メールアドレス
-  tbody
-    tr
-      td = @customer.first_name
-      td = @customer.last_name
-      td = @customer.read_first_name
-      td = @customer.read_last_name
-      td = @customer.post_code
-      td = @customer.prefecture
-      td = @customer.phone_number
-      td = @customer.email
-  = link_to "退会する",customer_registration_path,method: :delete, class: "btn btn-warning"
+div.table-container
+  table
+    thead
+      tr
+        th 姓
+        th 名
+        th セイ
+        th メイ
+        th 郵便番号
+        th 住所
+        th 電話番号
+        th メールアドレス
+    tbody
+      tr
+        td = @customer.first_name
+        td = @customer.last_name
+        td = @customer.read_first_name
+        td = @customer.read_last_name
+        td = @customer.post_code
+        td = @customer.prefecture
+        td = @customer.phone_number
+        td = @customer.email
+  = link_to "退会する",customer_registration_path,method: :delete, class: "btn btn-warning", data: {"turbolinks" => false}
   div.modal-btn.btn.btn-success
     p あなたがいいねした曲
+h4.history-text 購入履歴
+div.history
+  - @customer.orders.each do |order|
+    .cart-history
+      .history-wrapper
+        p
+          | 購入日:
+          = order.created_at
+        p 
+          | 購入内容:
+          - order.order_items.each do |order_item|
+            div.history-items
+              p = "#{order_item.item.name} x#{order_item.count}"
+              p = "単価 #{order_item.price}円  合計 #{order_item.price * order_item.count}円"
+        p
+          | 送付先:
+          =order.address
+        p
+          | 状態:
+          =order.delivery_status
 div.modal-container
   div.modal-wrapper
-  - @customer.favorites.each do |fav|
-    div.modal-items
-      = fav.item
-- @customer.orders.each do |order|
-  .classCarts
-    table
-        thead
-            tr
-                th 購入日
-                th 購入内容
-                th 総額
-                th 送付先
-                th 状態
+    - @customer.favorites.each do |fav|
+      div.modal-items
+        = fav.item
 div.modal-overlay
 
 

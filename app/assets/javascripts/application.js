@@ -53,7 +53,7 @@ modalOpenBtn.addEventListener("click", (evt)=>{
 });
 
 modalWindow.addEventListener("click", ()=>{
-    modalWindow.style.dispaly="none";
+    modalWindow.style.display="none";
     overLay.style.display="none";
 });
 

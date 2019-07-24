@@ -1,6 +1,6 @@
 h1 Items#show
 div.btn-container
- =link_to "←　一覧ページに戻る", items_path, class: "btn btn-info"
+ =link_to "←　一覧ページに戻る", items_path, class: "btn btn-info", data: {"turbolinks" => false}
 
  / カートに入れるボタン挿入
 div.item-container.flex
@@ -11,10 +11,10 @@ div.item-container.flex
       / =@item.image
     div.favorites-box
       - if @exist
-        = link_to item_favorite_path(@item), method: :delete do
+        = link_to item_favorite_path(@item), data: {"turbolinks" => false}, method: :delete do
           i class="fa fa-heart" aria-hidden="true" style="color: red"
       - else
-        = link_to  item_favorite_path(@item), method: :post do
+        = link_to  item_favorite_path(@item), data: {"turbolinks" => false}, method: :post do
           i class="fa fa-heart" aria-hidden="true" style="color: gray;"
       / いいねのハート
       =@item.favorites.count
