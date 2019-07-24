@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
     def new
         @address = Address.new
         @cart_items = current_customer.cart_items.all
-        @order_error = false
         @sum=0
         current_customer.cart_items.each do |cart|
             @sum += cart.item.price
@@ -17,9 +16,8 @@ class OrdersController < ApplicationController
             if cart.count > cart.item.stock
                 @address = Address.new
                 @cart_items = current_customer.cart_items.all
-                @order_error = "購入分の在庫がありません"
-                render ("orders/new")
-                return
+                @order_error = "unko"
+                render ("orders/new") and return
             end
         end
 
