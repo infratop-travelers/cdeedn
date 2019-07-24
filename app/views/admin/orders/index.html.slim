@@ -23,6 +23,8 @@ br/
           = " 受注日: #{order.created_at}|"
           = "  支払い方法: #{order.payment}"
           = "  合計金額: #{order.sum}円"
+          br/
+          = "  配送先住所: #{order.address}"
           = link_to  "配送する", admin_order_path(order), method: :put, data: { confirm: "ステータスを配達中にしても大丈夫ですか？"}
           br/
       #admin-sent
@@ -33,6 +35,8 @@ br/
           = " 受注日: #{order.created_at}|"
           = "  支払い方法: #{order.payment}"
           = "  合計金額: #{order.sum}円"
+          br/
+          = "  配送先住所: #{order.address}"
           = link_to  "配達完了", admin_order_path(order), method: :put, data: { confirm: "ステータスを配達済みにしても大丈夫ですか？"}
           br/
       #admin-delivered
@@ -43,6 +47,8 @@ br/
           = " 受注日: #{order.created_at}|"
           = "  支払い方法: #{order.payment}"
           = "  合計金額: #{order.sum}円"
+          br/
+          = "  配送先住所: #{order.address}"
           br/
 
 

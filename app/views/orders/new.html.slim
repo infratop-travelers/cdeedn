@@ -6,15 +6,34 @@ br/
 - @cart_items.each do |cart|
   = attachment_image_tag cart.item, :image, :fill, 50,50
 
+| 新しく住所を追加する
+= render "layouts/errors", model: @address, model_error: @address_error
+= form_with model: @address, url: customer_addresses_path(current_customer), method: :post, local: true do |address|
+  | 郵便番号
+  = address.text_field :post_code
+  | 都道府県
+  = address.text_field :prefecture
+  | 市区町村
+  = address.text_field :city
+  | 番地、その他
+  = address.text_field :street
+  br/
+  = address.submit "住所登録する"
+  br/
+
 = form_with url: customer_orders_path(current_customer), method: :post do |form|
   = form.label :address, "配送先住所選択"
   br/
   = current_customer.prefecture+current_customer.city+current_customer.street
   = form.radio_button :address, current_customer.prefecture+current_customer.city+current_customer.street, checked: true
   - current_customer.addresses.each do |address|
-    = current_customer.prefecture+current_customer.city+current_customer.street
-    = form.radio_button :address, address.prefecture+address.city+address+street
+    br/
+    = address.prefecture+address.city+address.street
+    = form.radio_button :address, address.prefecture+address.city+address.street
+    = link_to  "削除する", customer_address_path(current_customer, address), data: { confirm: "削除しても大丈夫ですか？"}, method: :delete
   br/
+
+
   = form.label :payment, "支払い方法選択"
     br/
     | クレジットカード

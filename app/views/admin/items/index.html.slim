@@ -1,4 +1,5 @@
 h1 #index.html
+= link_to  "戻る", admin_home_index_path, class: "btn btn-info"
 = link_to  "新規商品登録ページ", new_admin_item_path, class: "btn btn-success"
 br/
 - @items.each do |item|
