@@ -10,12 +10,29 @@ class ApplicationController < ActionController::Base
       return menu_array
     end
     def after_sign_in_path_for(resource)
-      flash[:notice] = "Signed in successfully."
-      items_path
+      case resource
+      when Customer
+        flash[:notice] = "Signed in successfully."
+        items_path
+      when Admin
+        admin_home_index_path
+      end
     end
     def after_sign_up_path_for(resource)
       flash[:notice] = "Welcome! You have signed up successfully."
       items_path
+    end
+    def after_sign_out_path_for(resource)
+      case resource
+      when :customer
+        new_customer_session_path
+      when :admin
+        new_admin_session_path
+      end
+    end
+
+    def signed_customer_redirect
+      redirect_to logout_path if current_customer && current_customer.resigned = true
     end
     
     protected

@@ -20,7 +20,7 @@ div.table-container
         td = @customer.prefecture
         td = @customer.phone_number
         td = @customer.email
-  = link_to "退会する",customer_registration_path,method: :delete, class: "btn btn-warning", data: {"turbolinks" => false}
+  = link_to "退会する",customer_resigned_customer_path(current_customer), method: :put, data: { confirm: "退会するとユーザーを復元することはできません。大丈夫ですか？"}, class: "btn btn-warning", data: {"turbolinks" => false}
   div.modal-btn.btn.btn-success
     p あなたがいいねした曲
 h4.history-text 購入履歴
@@ -49,6 +49,7 @@ div.modal-container
       div.modal-items
         = fav.item
 div.modal-overlay
+
 
 
 

@@ -1,13 +1,21 @@
 class OrdersController < ApplicationController
+    before_action :authenticate_customer!
+    before_action :signed_customer_redirect
     def new
+        @address = Address.new
         @cart_items = current_customer.cart_items.all
         @order_error = false
+        @sum=0
+        current_customer.cart_items.each do |cart|
+            @sum += cart.item.price
+        end
     end
 
     def create
         # もしも商品の在庫がなければredirect
         current_customer.cart_items.each do |cart|
             if cart.count > cart.item.stock
+                @address = Address.new
                 @cart_items = current_customer.cart_items.all
                 @order_error = "購入分の在庫がありません"
                 render ("orders/new")
@@ -24,8 +32,8 @@ class OrdersController < ApplicationController
             @order.sum += cart.item.price
         end
         @order.postage = 500
-        @order.address = current_customer.prefecture + current_customer.city + current_customer.street
-        @order.payment = "unko"
+        @order.address = params[:address]
+        @order.payment = params[:payment]
         @order.save
 
         # order_itemレコードを作る

@@ -1,4 +1,5 @@
 class Admin::OrdersController < ApplicationController
+    before_action :authenticate_admin!
     def index
         @orders = Order.all
         @orders_undispatched = @orders.where(delivery_status: 0)

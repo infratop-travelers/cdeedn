@@ -1,5 +1,6 @@
 .container.item-kinds
   h1 アーティスト、レーベル、ジャンル管理ページ
+  = link_to  "戻る", admin_home_index_path, class: "btn btn-info"
   .row
     .col-lg-12
       = render  "layouts/errors", model: @genre, model_error: @genre_error

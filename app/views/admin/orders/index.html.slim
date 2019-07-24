@@ -9,7 +9,7 @@ br/
             | 未発送
       .col-lg-4
         li.btn.btn-success#admin-sent-btn
-            | 発送済み
+            | 配達中
       .col-lg-4
         li.btn.btn-primary#admin-delivered-btn
             | 配達済み
@@ -21,7 +21,11 @@ br/
           = "注文者名: #{order.customer.last_name}  #{order.customer.first_name}|"
           = " 合計金額: #{order.sum}|"
           = " 受注日: #{order.created_at}|"
-          = link_to  "配送する", admin_order_path(order), method: :put, data: { confirm: "ステータスを配達中にしても大丈夫ですか？"}, data: {"turbolinks" => false}
+          = "  支払い方法: #{order.payment}"
+          = "  合計金額: #{order.sum}円"
+          br/
+          = "  配送先住所: #{order.address}"
+          = link_to  "配送する", admin_order_path(order), method: :put, data: { confirm: "ステータスを配達中にしても大丈夫ですか？"}
           br/
       #admin-sent
         - @orders_sent.each do |order|
@@ -29,7 +33,11 @@ br/
           = "注文者名: #{order.customer.last_name}  #{order.customer.first_name}|"
           = " 合計金額: #{order.sum}|"
           = " 受注日: #{order.created_at}|"
-          = link_to  "配達完了", admin_order_path(order), method: :put, data: { confirm: "ステータスを配達済みにしても大丈夫ですか？"}, data: {"turbolinks" => false}
+          = "  支払い方法: #{order.payment}"
+          = "  合計金額: #{order.sum}円"
+          br/
+          = "  配送先住所: #{order.address}"
+          = link_to  "配達完了", admin_order_path(order), method: :put, data: { confirm: "ステータスを配達済みにしても大丈夫ですか？"}
           br/
       #admin-delivered
         - @orders_delivered.each do |order|
@@ -37,6 +45,10 @@ br/
           = "注文者名: #{order.customer.last_name}  #{order.customer.first_name}|"
           = " 合計金額: #{order.sum}|"
           = " 受注日: #{order.created_at}|"
+          = "  支払い方法: #{order.payment}"
+          = "  合計金額: #{order.sum}円"
+          br/
+          = "  配送先住所: #{order.address}"
           br/
 
 
