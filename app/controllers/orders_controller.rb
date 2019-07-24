@@ -16,7 +16,6 @@ class OrdersController < ApplicationController
             if cart.count > cart.item.stock
                 @address = Address.new
                 @cart_items = current_customer.cart_items.all
-                @order_error = "unko"
                 render ("orders/new") and return
             end
         end
