@@ -40,6 +40,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.2]
       t.string "prefecture", null: false
       t.string "city", null: false
       t.string "street", null: false
+      t.boolean "resigned" ,default: false
 
 
       t.timestamps null: false

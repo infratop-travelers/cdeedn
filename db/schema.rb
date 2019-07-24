@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2019_07_22_075610) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
@@ -58,9 +57,9 @@ ActiveRecord::Schema.define(version: 2019_07_22_075610) do
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "street", null: false
+    t.boolean "resigned", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "resigned", default: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
@@ -115,7 +114,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_075610) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id", null: false
-    t.integer "delivery_status", null: false
+    t.integer "delivery_status", default: 0, null: false
     t.integer "sum", null: false
     t.integer "postage", null: false
     t.string "address", null: false

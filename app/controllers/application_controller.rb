@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     end
 
     def signed_customer_redirect
-      redirect_to logout_path if current_customer && current_customer.resigned = true
+      redirect_to logout_path if current_customer && current_customer.resigned
     end
     
     protected
