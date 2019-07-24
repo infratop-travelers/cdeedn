@@ -19,7 +19,9 @@ class CustomersController < ApplicationController
        render :edit
      end
   end
-  
+
+  def about
+  end
   private
     def customer_params
       params.require(:customer).permit(:last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number, :email, :encrypted_password)

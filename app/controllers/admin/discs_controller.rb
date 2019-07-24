@@ -1,5 +1,5 @@
 class Admin::DiscsController < ApplicationController
-
+    before_action :authenticate_admin!
     def create
         @disc = Disc.new(disc_params)
         if @disc.save

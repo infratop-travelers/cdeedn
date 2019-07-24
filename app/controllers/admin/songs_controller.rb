@@ -1,5 +1,5 @@
 class Admin::SongsController < ApplicationController
-
+    before_action :authenticate_admin!
     def create
       @song = Song.new(song_params)
       if @song.save
