@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+    before_action :signed_customer_redirect
 
     def index
         @items = Item.all

@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_action :signed_customer_redirect
   def create
     @favorite = current_customer.favorites.new
     @favorite.item_id = Item.find(params[:item_id]).id

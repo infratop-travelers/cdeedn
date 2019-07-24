@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :signed_customer_redirect
   def index
   	@items = Item.where(ready: true)
   end

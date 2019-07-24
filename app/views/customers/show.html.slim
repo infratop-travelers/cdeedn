@@ -34,7 +34,7 @@ table
         tr
             td = fav.item_id
 
-= link_to "退会する",customer_registration_path,method: :delete 
+= link_to "退会する",customer_resigned_customer_path(current_customer), method: :put, data: { confirm: "退会するとユーザーを復元することはできません。大丈夫ですか？"}
 
 
 

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :cart_items, only: [:index, :create, :destroy]
     resources :addresses, only: [:create, :destroy]
     resources :orders
+    resources :resigned_customers, only: [:update]
+  end
+  devise_scope :customer do
+    get '/logout', to: 'devise/sessions#destroy', as: :logout
   end
   
   resources :items, only: [:index, :show] do
@@ -28,7 +32,7 @@ Rails.application.routes.draw do
     resources :labels, only: [:create, :update, :destroy]
     resources :home, only: [:index]
     resources :customers, only: [:index, :show, :edit, :update, :destroy]
-    resources :resigned_customers, only: [:create,:update, :destroy]
+    resources :resigned_customers, only: [:update, :destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
