@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :authenticate_customer!
+  skip_before_action :authenticate_customer!, only: [:about]
   def show
     @customer = Customer.find(params[:id])
   end
