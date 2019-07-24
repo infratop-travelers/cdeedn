@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
     def new
+        @address = Address.new
         @cart_items = current_customer.cart_items.all
         @order_error = false
         @sum=0
@@ -12,6 +13,7 @@ class OrdersController < ApplicationController
         # もしも商品の在庫がなければredirect
         current_customer.cart_items.each do |cart|
             if cart.count > cart.item.stock
+                @address = Address.new
                 @cart_items = current_customer.cart_items.all
                 @order_error = "購入分の在庫がありません"
                 render ("orders/new")
