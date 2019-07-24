@@ -1,3 +1,0 @@
-@items = Item.all
-{}
-[[aaaaa,1],[],[]]
