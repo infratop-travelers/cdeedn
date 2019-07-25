@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
         @cart_items = current_customer.cart_items.all
         @sum=0
         current_customer.cart_items.each do |cart|
-            @sum += cart.item.price
+            @sum += cart.item.price * cart.count
         end
     end
 
@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
         @order.delivery_status = 0
         @order.sum = 0
         current_customer.cart_items.each do |cart|
-            @order.sum += cart.item.price
+            @order.sum += cart.item.price * cart.count
         end
         @order.postage = 500
         @order.address = params[:address]
