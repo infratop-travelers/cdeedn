@@ -1,10 +1,10 @@
 h1 #index.html
 = link_to  "戻る", admin_home_index_path, class: "btn btn-info"
-= link_to  "新規商品登録ページ", new_admin_item_path, class: "btn btn-success", data: {"turbolinks" => false}
+= link_to  "新規商品登録ページ", new_admin_item_path, class: "btn btn-success"
 
 br/
 - @items.each do |item|
  =item.name
  = attachment_image_tag item, :image, :fill, 50, 50
- = link_to  "商品詳細ページ", admin_item_path(item), class: "btn btn-primary", data: {"turbolinks" => false}
+ = link_to  "商品詳細ページ", admin_item_path(item), class: "btn btn-primary"
  br/

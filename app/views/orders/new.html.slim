@@ -1,5 +1,5 @@
-= link_to  "戻る", customer_cart_items_path, class: "btn btn-info", data: {"turbolinks" => false}
-= link_to  "購入する", customer_orders_path(current_customer), method: :post, class: "btn btn-success", data: {"turbolinks" => false}
+= link_to  "戻る", customer_cart_items_path, class: "btn btn-info"
+= link_to  "購入する", customer_orders_path(current_customer), method: :post, class: "btn btn-success"
 br/
 - @cart_items.each do |cart|
   = attachment_image_tag cart.item, :image, :fill, 50,50

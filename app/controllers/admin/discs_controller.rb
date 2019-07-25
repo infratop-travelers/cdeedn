@@ -3,7 +3,7 @@ class Admin::DiscsController < ApplicationController
     def create
         @disc = Disc.new(disc_params)
         if @disc.save
-            redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
+            redirect_to edit_admin_item_path(params[:item_id])
         else
             @singers = pull_down_menu(Singer.all)
             @genres = pull_down_menu(Genre.all)
@@ -20,7 +20,7 @@ class Admin::DiscsController < ApplicationController
     def update
         @disc = Disc.find(params[:id])
         if @disc.update(disc_params)
-            redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
+            redirect_to edit_admin_item_path(params[:item_id])
         else
             @singers = pull_down_menu(Singer.all)
             @genres = pull_down_menu(Genre.all)
@@ -37,7 +37,7 @@ class Admin::DiscsController < ApplicationController
     def destroy
         @disc = Disc.find(params[:id])
         @disc.delete
-        redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
+        redirect_to edit_admin_item_path(params[:item_id])
     end
 
     private
