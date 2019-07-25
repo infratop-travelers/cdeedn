@@ -1,46 +1,76 @@
-h1 Items#show
-div.btn-container
- =link_to "←　一覧ページに戻る", items_path, class: "btn btn-info", data: {"turbolinks" => false}
-
 - if @item.stock == 0
   .alert.alert-danger
     h1 売り切れです！！！
-
-div.item-container.flex
-  / 画面左側
-  div.side-bar
+div.item-btn-container
+  =link_to "商品一覧", items_path, class: "btn btn-info", data: {"turbolinks" => false}
+  =link_to "カート内商品", customer_cart_items_path(current_customer), class: "btn btn-success", data: {"turbolinks" => false}
+div.click-tab
+  div.tabA
+  div.tabB
+div.item-container
+  div.main-tab
     div.image-box
-      / refileで挿入するので多分↓はimage_tagとかそんな感じだった気がする
-      / =@item.image
-    - if customer_signed_in?  
+      =attachment_image_tag @item,:image, :fill, 250, 250, class: "show-image"
       div.favorites-box
-        - if @exist
-          = link_to item_favorite_path(@item), data: {"turbolinks" => false}, method: :delete do
-            i class="fa fa-heart" aria-hidden="true" style="color: red"
-        - else
-          = link_to  item_favorite_path(@item), data: {"turbolinks" => false}, method: :post do
-            i class="fa fa-heart" aria-hidden="true" style="color: gray;"
-      / いいねのハート
-      =@item.favorites.count
-  / 画面右側
-  div.main-info
-    div.item-info.flex
-      =@item.name
-      / =@item.singer.name
-      / =@item.label.name
-    div.songs
+        p
+          - if @exist
+            = link_to item_favorite_path(@item), data: {"turbolinks" => false}, method: :delete do
+              i class="fa fa-heart" aria-hidden="true" style="color: red"
+          - else
+            = link_to item_favorite_path(@item), data: {"turbolinks" => false}, method: :post do
+              i class="fa fa-heart" aria-hidden="true" style="color: gray;"
+          =@item.favorites.count
+          | いいね
+    div.main-info
+      div.item-info
+        p
+          | タイトル :
+          =@item.name
+        p
+          | 歌手 :
+          =@item.singer.name
+        p
+          | レーベル :
+          =@item.label.name
+      - if customer_signed_in?
+        = form_for(@cart_item, url: customer_cart_items_path(current_customer), method: :post) do |form|
+          = form.label :count, "個数"
+          = form.number_field :count, in: 1.0..@item.stock, step: 1.0
+          = form.hidden_field :item_id, value: @item.id
+          br/
+          = form.submit "カートに入れる", :class => 'submit_style'
+  div.songs-tab
+    h5.songs-container-title 曲一覧
+    div.songs-container
       div.wrapper
-        / - @item.songs.each do |song|
-         div.song-bar
-          / =@item.song.name
-          / =@item.disc
+        - @item.discs.each do |item|
+          div.song-items
+            p.song-title
+              =item.songs.name
+            p.song-disc
+              | ディスク名 :
+              span
+                =item.name
+
+javascript:
+  // item_showの曲一覧tabの記述です
+  const mainTab = document.querySelector(".main-tab");
+  const songTab = document.querySelector(".songs-tab");
+  const tabA = document.querySelector(".tabA");
+  const tabB = document.querySelector(".tabB");
+  tabB.addEventListener("click",()=>{
+      mainTab.style.display="none";
+      songTab.style.display="block";
+      tabA.style.height="40px";
+      tabB.style.height="45px";
+  });
+  tabA.addEventListener("click",()=>{
+      songTab.style.display="none";
+      mainTab.style.display="block";
+      tabB.style.height="40px";
+      tabA.style.height="45px";
+  });
 
 
-/ カートに入れる
-= if customer_signed_in?
-  = form_for(@cart_item, url: customer_cart_items_path(current_customer), method: :post) do |form|
-    = form.label :count, "個数"
-    = form.number_field :count, in: 1.0..@item.stock, step: 1.0
-    = form.hidden_field :item_id, value: @item.id
-    br/
-    = form.submit
+
+
