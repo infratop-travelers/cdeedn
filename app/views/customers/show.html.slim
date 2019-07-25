@@ -70,6 +70,24 @@ div.modal-container
             p = " 金額: #{fav.item.price}円"
 div.modal-overlay
 
+javascript:
+  // customer_showのモーダル導入記述です
+  modalOpen(".modal-container",".modal-overlay",".modal-btn");
+
+  function modalOpen(modalWindow,overLay,modalOpenBtn){
+      const inlineSpace = document.querySelector(modalWindow);
+      const outlineSpace = document.querySelector(overLay);
+      const openBtn = document.querySelector(modalOpenBtn);
+      openBtn.addEventListener("click", ()=>{
+          inlineSpace.style.display="block";
+          outlineSpace.style.display="block";
+      });
+      outlineSpace.addEventListener("click", ()=>{
+          inlineSpace.style.display="none";
+          outlineSpace.style.display="none";
+      });
+  };
+
 
 
 

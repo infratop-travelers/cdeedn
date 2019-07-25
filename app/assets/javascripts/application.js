@@ -41,19 +41,4 @@ function editBtn(editBody,editBodyBtn){
         })
     }
 }
-// customer_showのモーダル導入記述です
-const modalWindow = document.querySelector(".modal-container");
-const overLay = document.querySelector(".modal-overlay");
-const modalOpenBtn = document.querySelector(".modal-btn");
-
-modalOpenBtn.addEventListener("click", (evt)=>{
-    modalWindow.style.display="block";
-    overLay.style.display="block";
-});
-
-overLay.addEventListener("click", ()=>{
-    modalWindow.style.display="none";
-    overLay.style.display="none";
-});
-
 
