@@ -1,58 +1,59 @@
 div.order-btn-container
   = link_to  "カート内商品一覧", customer_cart_items_path, class: "btn btn-info"
   = link_to  "購入する", customer_orders_path(current_customer), method: :post, class: "btn btn-success"
-
-- @cart_items.each do |cart|
-  = attachment_image_tag cart.item, :image, :fill, 50,50
-  = cart.item.name
-  - if cart.count > cart.item.stock
-    .alert.alert-danger
-      | 在庫がありません！！！
-  br/
-
-| 新しく住所を追加する
-= render "layouts/errors", model: @address, model_error: @address_error
-= form_with model: @address, url: customer_addresses_path(current_customer), method: :post, local: true do |address|
-  | 郵便番号
-  = address.text_field :post_code
-  | 都道府県
-  = address.text_field :prefecture
-  | 市区町村
-  = address.text_field :city
-  | 番地、その他
-  = address.text_field :street
-  br/
-  = address.submit "住所登録する"
-  br/
-
-= form_with url: customer_orders_path(current_customer), method: :post, local: true do |form|
-  = form.label :address, "配送先住所選択"
-  br/
-  = current_customer.prefecture+current_customer.city+current_customer.street
-  = form.radio_button :address, current_customer.prefecture+current_customer.city+current_customer.street, checked: true
-  - current_customer.addresses.each do |address|
-    br/
-    = address.prefecture+address.city+address.street
-    = form.radio_button :address, address.prefecture+address.city+address.street
-    = link_to  "削除する", customer_address_path(current_customer, address), data: { confirm: "削除しても大丈夫ですか？"}, method: :delete
-  br/
-
-
-  = form.label :payment, "支払い方法選択"
-    br/
-    | クレジットカード
-    = form.radio_button :payment, "クレジットカード", checked: true
-    br/
-    | 銀行振込
-    = form.radio_button :payment, "銀行振込"
-    br/
-    = form.radio_button :payment, "代引き"
-    | 着払い
-    br/
-    = "合計金額　#{@sum}円"
-    - if current_customer.cart_items.count != 0
-      = form.submit "購入する", class: "btn btn-success", data: { confirm: "購入します"}, disable: true
-    - else
-      .alert-danger.alert カートに商品がありません!!!
-
-    br
+div.main-orders
+  div.order-items
+    - @cart_items.each do |cart|
+        = link_to cart.item, class: "order-item-btn" do
+          p = attachment_image_tag cart.item, :image, :fill, 100,100
+          p = cart.item.name
+          - if cart.count > cart.item.stock
+            .alert.alert-danger
+              | 在庫がありません！！！
+  div.side-bar
+    div.add-address
+      p.title
+        | 新しく住所を追加する
+        = render "layouts/errors", model: @address, model_error: @address_error
+        = form_with model: @address, url: customer_addresses_path(current_customer), method: :post, local: true do |address|
+          p
+            | 郵便番号
+            = address.text_field :post_code
+          p
+            | 都道府県
+            = address.text_field :prefecture
+          p
+            | 市区町村
+            = address.text_field :city
+          p
+            | 番地、その他
+            = address.text_field :street
+          p = address.submit "住所登録する",class: "btn btn-primary"
+    div.payment-setting
+      = form_with url: customer_orders_path(current_customer), method: :post, local: true do |form|
+        div.select-address
+          p.title = form.label :address, "配送先住所選択"
+          p
+            = current_customer.prefecture+current_customer.city+current_customer.street
+            = form.radio_button :address, current_customer.prefecture+current_customer.city+current_customer.street, checked: true
+          - current_customer.addresses.each do |address|
+            p = address.prefecture+address.city+address.street
+            p = form.radio_button :address, address.prefecture+address.city+address.street
+            p = link_to  "削除する", customer_address_path(current_customer, address), data: { confirm: "削除しても大丈夫ですか？"}, method: :delete
+        div.select-payment
+          = form.label :payment, "支払い方法選択"
+            p
+              | クレジットカード
+              = form.radio_button :payment, "クレジットカード", checked: true
+            p
+              | 銀行振込
+              = form.radio_button :payment, "銀行振込"
+            p
+              | 着払い
+              = form.radio_button :payment, "代引き"
+            p
+              = "合計金額　#{@sum}円"
+            - if current_customer.cart_items.count != 0
+              = form.submit "購入する", class: "btn btn-success", data: { confirm: "購入します"}, disable: true
+            - else
+              p.alert-danger.alert カートに商品がありません!!!
