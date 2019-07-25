@@ -1,13 +1,14 @@
 h1 ユーザー一覧画面
-= link_to  "商品一覧画面へ", admin_items_path, data: {"turbolinks" => false}
+= link_to  "商品一覧画面へ", admin_items_path, class: "btn btn-info"
+= link_to  "戻る", admin_home_index_path, class: "btn btn-success"
 br
 br
 
 - @customers.each do |customer|
-  - if customer.resigned == false
-    = customer.last_name
-    = customer.first_name
-    = link_to "詳細へ", admin_customer_path(customer.id)    
-    = link_to "edit", edit_admin_customer_path(customer)
+    = "登録名  #{customer.last_name}  #{customer.first_name}   "
+    = "Email  #{customer.email}"
+    = link_to "詳細へ", admin_customer_path(customer.id), class: "btn btn-light"
+    = link_to "edit", edit_admin_customer_path(customer), class: "btn btn-primary"
+    br/
 
     br

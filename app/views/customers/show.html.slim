@@ -33,7 +33,7 @@ div.table-container
      = @customer.email
   div.customer-btn-container
     = link_to "編集画面", edit_customer_path(current_customer) , class: "btn btn-primary"
-    = link_to "退会する",customer_resigned_customer_path(current_customer), method: :put, data: { confirm: "退会するとユーザーを復元することはできません。大丈夫ですか？", turbolinks: false}, class: "btn btn-warning"
+    = link_to "退会する",customer_resigned_customer_path(current_customer), method: :put, data: { confirm: "退会するとユーザーを復元することはできません。大丈夫ですか？"}, class: "btn btn-warning"
     div.modal-btn.btn.btn-success
       p あなたがいいねした曲
 h4.history-text 購入履歴
@@ -62,7 +62,7 @@ div.modal-container
   div.modal-wrapper
     - @customer.favorites.each do |fav|
       div.modal-items
-        = link_to fav.item, class: "to-fav-links",data: { turbolinks: false} do
+        = link_to fav.item, class: "to-fav-links" do
           p = attachment_image_tag fav.item, :image, :fill, 50, 50
           div.name-sum
             p = fav.item.name

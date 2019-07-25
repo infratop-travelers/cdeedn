@@ -3,7 +3,7 @@ class Admin::SongsController < ApplicationController
     def create
       @song = Song.new(song_params)
       if @song.save
-        redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
+        redirect_to edit_admin_item_path(params[:item_id])
       else
         @singers = pull_down_menu(Singer.all)
         @genres = pull_down_menu(Genre.all)
@@ -21,7 +21,7 @@ class Admin::SongsController < ApplicationController
     def update
         @song = Song.find(params[:id])
         if @song.update(song_params)
-            redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
+            redirect_to edit_admin_item_path(params[:item_id])
         else
             @singers = pull_down_menu(Singer.all)
             @genres = pull_down_menu(Genre.all)
@@ -40,7 +40,7 @@ class Admin::SongsController < ApplicationController
     def destroy
         @song = Song.find(params[:id])
         @song.delete
-        redirect_to edit_admin_item_path(params[:item_id]), data: {"turbolinks" => false}
+        redirect_to edit_admin_item_path(params[:item_id])
     end
 
     private

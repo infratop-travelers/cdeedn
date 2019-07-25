@@ -2,7 +2,7 @@
   p
     = flash.now[:notice]
 
-= link_to "ユーザー一覧画面へ", admin_customers_path, data: {"turbolinks" => false}
+= link_to "ユーザー一覧画面へ", admin_customers_path
 br
 | 姓  
 = @customer.last_name
@@ -27,5 +27,5 @@ br
 br
 br
 
-= link_to "edit", edit_admin_customer_path(@customer), data: {"turbolinks" => false}
-= link_to "退会させる", admin_resigned_customer_path(@customer.id, params: { customer: { resigned: true } }, resigned_customer: { id: @customer.id } ), method: :put, data: { confirm: "本当に退会させますか？", turbolinks: false }
+= link_to "edit", edit_admin_customer_path(@customer)
+= link_to "退会させる", admin_resigned_customer_path(@customer.id, params: { customer: { resigned: true } }, resigned_customer: { id: @customer.id } ), method: :put, data: { confirm: "本当に退会させますか？" }
