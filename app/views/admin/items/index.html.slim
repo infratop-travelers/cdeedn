@@ -4,7 +4,12 @@ h1 #index.html
 
 br/
 - @items.each do |item|
- =item.name
- = attachment_image_tag item, :image, :fill, 50, 50
- = link_to  "商品詳細ページ", admin_item_path(item), class: "btn btn-primary"
- br/
+  .admin-item-index
+    = attachment_image_tag item, :image, :fill, 100, 100
+    = "商品名 :  #{item.name}"
+    ="  アーティスト : #{item.singer.name}"
+    ="  ジャンル : #{item.genre.name}"
+    ="  レーベル : #{item.label.name}"
+    = link_to  "詳細ページ", admin_item_path(item), class: "btn btn-primary"
+    = link_to  "編集ページ", edit_admin_item_path(item), class: "btn btn-light"
+    br/

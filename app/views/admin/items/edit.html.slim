@@ -26,9 +26,11 @@ br/
         br/
         = form.attachment_field :image
         br/
-        = attachment_image_tag @item, :image, :fill, 100, 100
+        p = attachment_image_tag @item, :image, :fill, 100, 100
         br/
-        = form.select :ready, [["出品",true], ["準備中", false]]
+        p 
+          | 商品状況
+          = form.select :ready, [["出品",true], ["準備中", false]]
         br/
         = form.submit class: "btn btn-primary"
   .row.alert.alert-danger
