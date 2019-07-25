@@ -16,7 +16,8 @@ class OrdersController < ApplicationController
             if cart.count > cart.item.stock
                 @address = Address.new
                 @cart_items = current_customer.cart_items.all
-                render ("orders/new") and return
+                render ("orders/new")
+                return
             end
         end
 

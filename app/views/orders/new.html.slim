@@ -24,7 +24,7 @@ br/
   = address.submit "住所登録する"
   br/
 
-= form_with url: customer_orders_path(current_customer), method: :post do |form|
+= form_with url: customer_orders_path(current_customer), method: :post, local: true do |form|
   = form.label :address, "配送先住所選択"
   br/
   = current_customer.prefecture+current_customer.city+current_customer.street
