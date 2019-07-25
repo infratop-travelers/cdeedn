@@ -49,6 +49,9 @@ br/
     | 着払い
     br/
     = "合計金額　#{@sum}円"
-    = form.submit "購入する", class: "btn btn-success", data: { confirm: "購入します"}
+    - if current_customer.cart_items.count != 0
+      = form.submit "購入する", class: "btn btn-success", data: { confirm: "購入します"}, disable: true
+    - else
+      .alert-danger.alert カートに商品がありません!!!
 
     br
