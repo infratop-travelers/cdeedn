@@ -1,3 +1,13 @@
 // Place all the styles related to the searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.search-item-box{
+    margin:10px 1% 10px 1%;
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+    border: solid 1px gray;
+    a:link, a:visited {
+        color: gray;
+    }
+}

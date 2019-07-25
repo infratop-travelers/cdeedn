@@ -1,26 +1,47 @@
+H1 検索結果
+H2 = "#{params[:search]}: 商品"
 .container
   .row
-    .col-lg-3
-      h2 商品
-      - @items.each do |item|
-        br/
-        = link_to  "#{item.name}", item_path(item)
-        br/
-    .col-lg-3
-      h2 歌手
-      - @singers.each do |singer|
-        br
-        = singer.name
-        br/
-    .col-lg-3
-      h2 レーベル
-      - @labels.each do |label|
-        br/
-        = label.name
-        br/
-    .col-lg-3
-      h2 ジャンル
-      - @genres.each do |genre|
-        br/
-        = genre.name
-        br/
+    - @items.each do |item|
+        .search-item-box
+          = link_to  item_path(item) do
+            = attachment_image_tag item, :image, :fill, 200, 200
+          p
+            b = link_to  item.name, item_path(item)
+          = item.singer.name
+
+H2 = "#{params[:search]}: アーティスト"
+.container
+  .row
+    - @singers.each do |singer|
+      - singer.items.each do |item|
+        .search-item-box
+          = link_to  item_path(item) do
+            = attachment_image_tag item, :image, :fill, 200, 200
+          p
+            b = link_to  item.name, item_path(item)
+          = singer.name
+
+H2 = "#{params[:search]}: レーベル"
+.container
+  .row
+    - @labels.each do |label|
+      - label.items.each do |item|
+        .search-item-box
+          = link_to  item_path(item) do
+            = attachment_image_tag item, :image, :fill, 200, 200
+          p
+            b = link_to  item.name, item_path(item)
+          = item.singer.name
+
+H2 = "#{params[:search]}: ジャンル"
+.container
+  .row
+    - @genres.each do |genre|
+      - genre.items.each do |item|
+        .search-item-box
+          = link_to  item_path(item) do
+            = attachment_image_tag item, :image, :fill, 200, 200
+          p
+            b = link_to  item.name, item_path(item)
+          = item.singer.name
