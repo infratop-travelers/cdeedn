@@ -1,17 +1,55 @@
-.container
-  .row
-    .col-lg-3
-      = link_to  "商品編集へ", edit_admin_item_path(params[:id]), class: "btn btn-primary" 
+.item-btn-container
+  = link_to  "商品一覧へ", admin_items_path, class: "btn btn-success"
+  = link_to  "商品編集へ", edit_admin_item_path(params[:id]), class: "btn btn-primary" 
+.click-tab
+  .tabA
+  .tabB
+.item-container
+  .main-tab
+    .image-box
+      = attachment_image_tag @item,:image, :fill, 250, 250, class: "show-image"
+    .main-info
+      .item-info
+        p
+          | タイトル :
+          = @item.name
+        p
+          | 歌手 :
+          = @item.singer.name
+        p
+          | レーベル :
+          = @item.label.name
+  .songs-tab
+    h5.songs-container-title 曲一覧
+    .songs-container
+      .wrapper
+        - @item.discs.each do |item|
+          .song-items
+            p.song-title
+              = item.songs.name
+            p.song-disc
+              | ディスク名 :
+              span
+                = item.name
 
-    .col-lg-6
-      = attachment_image_tag @item, :image, :fill, 300, 300
-      br/
-      = @item.name
-      br/
-      = @item.price
-      br/
-      = @item.stock
+javascript:
+  // item_showの曲一覧tabの記述です
+  const mainTab = document.querySelector(".main-tab");
+  const songTab = document.querySelector(".songs-tab");
+  const tabA = document.querySelector(".tabA");
+  const tabB = document.querySelector(".tabB");
+  tabB.addEventListener("click",()=>{
+      mainTab.style.display="none";
+      songTab.style.display="block";
+      tabA.style.height="40px";
+      tabB.style.height="45px";
+  });
+  tabA.addEventListener("click",()=>{
+      songTab.style.display="none";
+      mainTab.style.display="block";
+      tabB.style.height="40px";
+      tabA.style.height="45px";
+  });
 
-    .col-lg-3
-      = link_to  "商品一覧へ", admin_items_path, class: "btn btn-success"
+
 

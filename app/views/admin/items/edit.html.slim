@@ -3,7 +3,7 @@ br/
 = link_to  "戻る", admin_item_path(@item.id), class: "btn btn-success"
 .container
   .row
-    .col-lg-12.edit-item
+    .col-lg-6.edit-item
       = render "/layouts/errors", model: @item, model_error: @item_error
       = form_with model: @item, url: admin_item_path(@item), method: :put, local: true do |form|
         = form.label :singer_id, "アーティスト名"
@@ -26,13 +26,15 @@ br/
         br/
         = form.attachment_field :image
         br/
-        p = attachment_image_tag @item, :image, :fill, 100, 100
         br/
         p 
           | 商品状況
           = form.select :ready, [["出品",true], ["準備中", false]]
         br/
         = form.submit class: "btn btn-primary"
+    .col-lg-6.edit-item
+      p アルバムイメージ
+      p = attachment_image_tag @item, :image, :fill, 300, 300
   .row.alert.alert-danger
     | ディスクは中に曲が入っている状態では消すことができません!
   .row
