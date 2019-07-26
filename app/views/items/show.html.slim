@@ -2,36 +2,38 @@
   .alert.alert-danger
     h1 売り切れです！！！
 div.item-btn-container
-  =link_to "商品一覧", items_path, class: "btn btn-info"
-  =link_to "カート内商品", customer_cart_items_path(current_customer), class: "btn btn-success"
+  = link_to "商品一覧", items_path, class: "btn btn-info"
+  - if customer_signed_in?
+    = link_to "カート内商品", customer_cart_items_path(current_customer), class: "btn btn-success"
 div.click-tab
   div.tabA
   div.tabB
 div.item-container
   div.main-tab
     div.image-box
-      =attachment_image_tag @item,:image, :fill, 250, 250, class: "show-image"
+      = attachment_image_tag @item,:image, :fill, 250, 250, class: "show-image"
       div.favorites-box
-        p
-          - if @exist
-            = link_to item_favorite_path(@item), method: :delete do
-              i class="fa fa-heart" aria-hidden="true" style="color: red"
-          - else
-            = link_to item_favorite_path(@item), method: :post do
-              i class="fa fa-heart" aria-hidden="true" style="color: gray;"
-          =@item.favorites.count
-          | いいね
+        - if customer_signed_in?
+          p
+            - if @exist
+              = link_to item_favorite_path(@item), method: :delete do
+                i class="fa fa-heart" aria-hidden="true" style="color: red"
+            - else
+              = link_to item_favorite_path(@item), method: :post do
+                i class="fa fa-heart" aria-hidden="true" style="color: gray;"
+            = @item.favorites.count
+            | いいね
     div.main-info
       div.item-info
         p
           | タイトル :
-          =@item.name
+          = @item.name
         p
           | 歌手 :
-          =@item.singer.name
+          = @item.singer.name
         p
           | レーベル :
-          =@item.label.name
+          = @item.label.name
       - if customer_signed_in?
         = form_for(@cart_item, url: customer_cart_items_path(current_customer), method: :post) do |form|
           = form.label :count, "個数"
