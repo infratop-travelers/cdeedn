@@ -102,4 +102,31 @@ $color: #c0c0c0;
 	font-weight: bold;
 }
 
+// customer-edit
+.customer-form-container{
+	width: 60%;
+	border: 5px solid $color;
+	border-radius: 20px;
+	margin: 0 auto 20px auto;
+	padding: 30px;
+	display:flex;
+	font-weight: bold;
+	justify-content: space-around;
+	& > div > p > input{
+		color: $color;
+		text-align: center;
+		margin-left: 5px;
+	}
+}
+
+.customer-submit-btn{
+	display: flex;
+	justify-content: space-around;
+	& > .btn{
+		height: 40px;
+	}
+}
+
+
+
 
