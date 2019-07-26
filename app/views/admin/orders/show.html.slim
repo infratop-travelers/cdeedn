@@ -1,0 +1,20 @@
+= link_to  "戻る", admin_orders_path, class: "btn btn-info"
+div.history
+  .cart-history
+    .history-wrapper
+      p
+        = "購入者: #{@order.customer.last_name + @order.customer.first_name}"
+      p
+        = "購入日: #{@order.created_at}"
+      p
+        | 購入内容:
+        - @order.order_items.each do |order_item|
+          div.history-items
+            p = "#{order_item.item.name} x#{order_item.count}  単価 #{order_item.price}円  小計 #{order_item.price * order_item.count}円"
+      p
+        | 合計
+        = " #{@order.sum}円"
+      p
+        = "送付先: #{@order.address}"
+      p
+        = "状態: #{@order.delivery_status}"

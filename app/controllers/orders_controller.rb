@@ -54,12 +54,4 @@ class OrdersController < ApplicationController
 
         redirect_to customer_path(current_customer)
     end
-
-    def show
-        @orders = current_customer.orders.all
-    end
-
-    def index
-        @orders = current_customer.orders.all
-    end
 end
