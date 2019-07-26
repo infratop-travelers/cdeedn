@@ -1,31 +1,62 @@
-- if flash[:notice]
-  p
-    = flash.now[:notice]
-
-= link_to "ユーザー一覧画面へ", admin_customers_path
-br
-| 姓  
-= @customer.last_name
-br
-| 名  
-= @customer.first_name
-br
-| セイ
-= @customer.read_last_name
-br
-| メイ
-= @customer.read_first_name
-br
-| 郵便番号  
-= @customer.post_code
-br
-| 住所
-= @customer.prefecture + @customer.city
-br
-| メイ
-= @customer.email
-br
-br
-
-= link_to "edit", edit_admin_customer_path(@customer)
-= link_to "退会させる", admin_resigned_customer_path(@customer.id, params: { customer: { resigned: true } }, resigned_customer: { id: @customer.id } ), method: :put, data: { confirm: "本当に退会させますか？" }
+= link_to  "戻る", admin_customers_path, class: "btn btn-success"
+div.table-container
+  div.customer-items
+    p
+     | 姓:
+     = @customer.first_name
+  div.customer-items
+    p
+     |名:
+     = @customer.last_name
+  div.customer-items
+    p
+     |セイ:
+     = @customer.read_first_name
+  div.customer-items
+    p
+     | メイ:
+     = @customer.read_last_name
+  div.customer-items
+    p
+     | 郵便番号:
+     = @customer.post_code
+  div.customer-items
+    p
+     | 住所:
+     = @customer.prefecture
+  div.customer-items
+    p
+     | 電話番号:
+     = @customer.phone_number
+  div.customer-items
+    p
+     | メールアドレス:
+     = @customer.email
+  div.customer-btn-container
+    = link_to "編集画面", edit_admin_customer_path(@customer) , class: "btn btn-primary"
+    - if @customer.resigned
+        .alert-danger.alert このユーザーは退会済みです
+    - else
+        = link_to "退会させる", admin_resigned_customer_path(@customer.id), method: :put, data: { confirm: "本当に退会させますか？" }, class: "btn btn-danger"
+h4.history-text 購入履歴
+div.history
+  - @customer.orders.each do |order|
+    .cart-history
+      .history-wrapper
+        p
+          | 購入日:
+          = order.created_at
+        p
+          | 購入内容:
+          - order.order_items.each do |order_item|
+            div.history-items
+              p = "#{order_item.item.name} x#{order_item.count}  単価 #{order_item.price}円  小計 #{order_item.price * order_item.count}円"
+        p
+          | 合計
+          = " #{order.sum}円"
+        p
+          | 送付先:
+          = order.address
+        p
+          | 状態:
+          = order.delivery_status

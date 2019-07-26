@@ -9,6 +9,8 @@ br
     = "Email  #{customer.email}"
     = link_to "詳細へ", admin_customer_path(customer.id), class: "btn btn-light"
     = link_to "edit", edit_admin_customer_path(customer), class: "btn btn-primary"
+    - if customer.resigned
+      .btn.btn-danger このユーザーは退会済みです
     br/
 
     br
