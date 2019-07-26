@@ -5,7 +5,8 @@ div.cart-container
   div.cart-main-box
     - @cart_items.each do |cart_item|
       div.cart-items
-        div.cart-ib
+        / div.cart-ib
+        = link_to cart_item.item, class: "cart-ib" do
           = attachment_image_tag cart_item.item, :image, :fill, 50, 50
           = cart_item.item.name
         p
