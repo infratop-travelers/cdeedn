@@ -14,7 +14,6 @@ class Admin::CustomersController < ApplicationController
 
     def update
         @customer = Customer.find(params[:id])
-        p @customer
         if @customer.update(customer_params)
             redirect_to admin_customer_path(@customer), notice: '情報の更新が成功しました'
         else
