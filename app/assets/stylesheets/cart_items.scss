@@ -50,9 +50,20 @@ $color:  #c0c0c0;
     	color: white;
     	text-decoration: none;
     }
-    & > p{
-    	margin-bottom: 0;
-    	font-size: 20px;
+    & > .cart-item-count{
+      padding: 10px 0;
+      height: 90%;
+    	font-size: 12px;
+      display: block;
+      &:hover{
+        color: white;
+      }
+      & > p{
+        margin-bottom: 5px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
     }
 }
 

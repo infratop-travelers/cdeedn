@@ -34,6 +34,10 @@ div.item-container
         p
           | レーベル :
           = @item.label.name
+        p
+          | 価格 :
+          = @item.price
+          | 円
       - if customer_signed_in?
         = form_for(@cart_item, url: customer_cart_items_path(current_customer), method: :post) do |form|
           = form.label :count, "個数"
