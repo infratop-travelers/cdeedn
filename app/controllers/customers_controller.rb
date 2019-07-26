@@ -15,6 +15,7 @@ class CustomersController < ApplicationController
     if @customer.update(customer_params)
       redirect_to customer_path(@customer)
     else
+      @customer_error = "編集内容にエラーがあります"
       render ("customers/edit")
     end
   end
@@ -23,6 +24,6 @@ class CustomersController < ApplicationController
   end
   private
     def customer_params
-      params.require(:customer).permit(:last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number, :email, :password)
+      params.require(:customer).permit(:last_name, :first_name, :read_last_name, :read_first_name, :post_code, :prefecture, :city, :street, :phone_number, :email, :password, :password_confirmation)
     end
 end

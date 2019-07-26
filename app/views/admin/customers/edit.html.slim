@@ -1,35 +1,42 @@
 = render "/layouts/errors", model: @customer, model_error: @customer_error
-        
+div.customer-btn-container
+  = link_to "戻る", admin_customers_path,class: "btn btn-success"
 = form_with model: @customer, url: admin_customer_path, method: :put, local: true do |form|
-  = form.label :last_name, "姓"
-  = form.text_field :last_name
-  br/
-  = form.label :first_name, "名"
-  = form.text_field :first_name
-  br/
-  = form.label :read_last_name, "セイ"
-  = form.text_field :read_last_name
-  br/
-  = form.label :read_first_name, "メイ"
-  = form.text_field :read_first_name
-  br/
-  = form.label :phone_number, "電話番号"
-  = form.telephone_field :phone_number
-  br/
-  = form.label :post_code, "郵便番号"
-  = form.text_field :post_code
-  br/
-  = form.label :prefecture, "都道府県"
-  = form.text_field :prefecture
-  br/
-  = form.label :city, "市区町村"
-  = form.text_field :city
-  br/
-  = form.label :street, "番地、その他"
-  = form.text_field :street
-  br/
+  div.customer-form-container
+    div.name-container
+      p
+        = form.label :last_name, "姓"
+        = form.text_field :last_name
+      p
+        = form.label :first_name, "名"
+        = form.text_field :first_name
+      p
+        = form.label :read_last_name, "セイ"
+        = form.text_field :read_last_name
+      p
+        = form.label :read_last_name, "メイ"
+        = form.text_field :read_first_name
+    div.address-container
+      p
+        = form.label :post_code, "郵便番号"
+        = form.text_field :post_code
+      p
+        = form.label :prefecture, "都道府県"
+        = form.text_field :prefecture
+      p
+        = form.label :city, "市区町村"
+        = form.text_field :city
+      p
+        = form.label :street, "番地、その他"
+        = form.text_field :street
+    div.identified-container
+      p
+        = form.label :phone_number, "電話番号"
+        = form.text_field :phone_number
+      p
+        = form.label :email, "メールアドレス"
+        = form.text_field :email
+  div.customer-submit-btn
+    = form.submit "ユーザー情報更新", data: { confirm: "本当に情報を更新しますか？"}, class: "btn btn-primary"
 
-  = form.label :email
-  = form.email_field :email
-  br/
-  = form.submit
+
