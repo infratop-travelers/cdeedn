@@ -58,17 +58,17 @@ div.history
         p
           | 状態:
           =order.delivery_status
-div.modal-container
-  div.modal-wrapper
+.modal-container
+  .modal-wrapper
     - @customer.favorites.each do |fav|
-      div.modal-items
+      .modal-items
         = link_to fav.item, class: "to-fav-links" do
           p = attachment_image_tag fav.item, :image, :fill, 50, 50
-          div.name-sum
+          .name-sum
             p = fav.item.name
             p = fav.item.singer.name
             p = " 金額: #{fav.item.price}円"
-div.modal-overlay
+.modal-overlay
 
 javascript:
   // customer_showのモーダル導入記述です

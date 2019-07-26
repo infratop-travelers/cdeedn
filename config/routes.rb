@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :customers, only: [:show, :destroy, :edit, :update] do
     resources :cart_items, only: [:index, :create, :destroy]
     resources :addresses, only: [:create, :destroy]
-    resources :orders
+    resources :orders, only: [:new, :create]
     resources :resigned_customers, only: [:update]
   end
   devise_scope :customer do
