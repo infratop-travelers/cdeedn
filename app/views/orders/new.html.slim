@@ -3,13 +3,29 @@ div.order-btn-container
   = link_to  "購入する", customer_orders_path(current_customer), method: :post, class: "btn btn-success"
 div.main-orders
   div.order-items
+    -@sum = 0
     - @cart_items.each do |cart|
         = link_to cart.item, class: "order-item-btn" do
-          p = attachment_image_tag cart.item, :image, :fill, 100,100
-          p = cart.item.name
+          div.left-side
+            = attachment_image_tag cart.item, :image, :fill, 100,100
+            p = cart.item.name
+          div.right-side
+            p
+              | 価格
+              = cart.item.price
+              | 円
+            p
+              | 小計
+              = cart.item.price * cart.count
+              | 円
+            - @sum += cart.item.price * cart.count
           - if cart.count > cart.item.stock
             .alert.alert-danger
               | 在庫がありません！！！
+    p.text
+      |カート内合計
+      = @sum
+      |円
   div.side-bar
     div.add-address
       p.title
