@@ -38,7 +38,7 @@ div.item-container
           | 価格 :
           = @item.price
           | 円
-      - if customer_signed_in?
+      - if customer_signed_in? && @item.stock != 0
         = form_for(@cart_item, url: customer_cart_items_path(current_customer), method: :post) do |form|
           = form.label :count, "個数"
           = form.number_field :count, in: 1.0..@item.stock, step: 1.0
