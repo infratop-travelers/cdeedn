@@ -50,13 +50,14 @@ div.item-container
     div.songs-container
       div.wrapper
         - @item.discs.each do |item|
-          div.song-items
-            p.song-title
-              =item.songs.name
-            p.song-disc
-              | ディスク名 :
-              span
-                =item.name
+          - item.songs.each do |song|
+            div.song-items
+              p.song-title
+                =song.name
+              p.song-disc
+                | ディスク名 :
+                span
+                  =item.name
 
 javascript:
   // item_showの曲一覧tabの記述です

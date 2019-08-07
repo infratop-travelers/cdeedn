@@ -22,15 +22,16 @@
   .songs-tab
     h5.songs-container-title 曲一覧
     .songs-container
-      .wrapper
+      div.wrapper
         - @item.discs.each do |item|
-          .song-items
-            p.song-title
-              = item.songs.name
-            p.song-disc
-              | ディスク名 :
-              span
-                = item.name
+          - item.songs.each do |song|
+            div.song-items
+              p.song-title
+                =song.name
+              p.song-disc
+                | ディスク名 :
+                span
+                  =item.name
 
 javascript:
   // item_showの曲一覧tabの記述です
