@@ -4,7 +4,7 @@ class Item < ApplicationRecord
     attachment :image
 
     has_many :favorites
-    has_many :discs
+    has_many :discs, dependent: :destroy
     has_many :cart_item
     has_many :order_item
     belongs_to :singer

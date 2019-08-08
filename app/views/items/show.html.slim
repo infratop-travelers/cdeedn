@@ -1,6 +1,3 @@
-- if @item.stock == 0
-  .alert.alert-danger
-    h1 売り切れです！！！
 div.item-btn-container
   = link_to "商品一覧", items_path, class: "btn btn-info"
   - if customer_signed_in?
@@ -38,13 +35,16 @@ div.item-container
           | 価格 :
           = @item.price
           | 円
-      - if customer_signed_in? && @item.stock != 0
-        = form_for(@cart_item, url: customer_cart_items_path(current_customer), method: :post) do |form|
-          = form.label :count, "個数"
-          = form.number_field :count, in: 1.0..@item.stock, step: 1.0
-          = form.hidden_field :item_id, value: @item.id
-          br/
-          = form.submit "カートに入れる", :class => 'submit_style'
+      - if customer_signed_in?
+        - if @item.stock != 0
+          = form_for(@cart_item, url: customer_cart_items_path(current_customer), method: :post) do |form|
+            = form.label :count, "個数"
+            = form.number_field :count, in: 1.0..@item.stock, step: 1.0, required: true
+            = form.hidden_field :item_id, value: @item.id
+            br/
+            = form.submit "カートに入れる", :class => 'submit_style'
+        - else
+          p.alert-danger style="text-align:center;"  売り切れ
   div.songs-tab
     h5.songs-container-title 曲一覧
     div.songs-container
