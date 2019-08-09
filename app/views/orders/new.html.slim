@@ -1,6 +1,5 @@
 div.order-btn-container
   = link_to  "カート内商品一覧", customer_cart_items_path, class: "btn btn-info"
-  = link_to  "購入する", customer_orders_path(current_customer), method: :post, class: "btn btn-success"
 div.main-orders
   div.order-items
     -@sum = 0
