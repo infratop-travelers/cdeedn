@@ -45,6 +45,7 @@ $color: #c0c0c0;
 	transform: translateX(-50%);
 }
 
+
 .order-item-btn{
 	min-width: 100px;
 	border-radius: 5px;
@@ -90,7 +91,13 @@ $color: #c0c0c0;
 
 .payment-setting{
 	border: 5px double $color;
+	overflow-y: scroll;
+	max-height: 350px;
 }
+
+.payment-wrapper{
+}
+
 
 input{
     border: 0.5px solid $color;
