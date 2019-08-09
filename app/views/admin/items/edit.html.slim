@@ -16,8 +16,7 @@ br/
         = form.select :label_id, @labels
         br/
         = form.label :price, "価格"
-        = form.number_field :price
-        br/
+        = form.number_field :price, in: 1.0..2_147_483_647, step: 1.0
         = form.label :name, "アルバム名"
         = form.text_field :name
         br/
@@ -96,8 +95,8 @@ br/
                 = form.label :name, "曲名"
                 = form.text_field :name
                 br/
-                = form.label :disc_id, "disc固有id"
-                = form.number_field :disc_id
+                = form.label :disc_id, "ディスク名"
+                = form.select :disc_id, @discs
                 br/
                 = form.label :number, "曲順"
                 = form.number_field :number
